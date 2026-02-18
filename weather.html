@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .weather-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 70%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            background: #4facfe;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #007bff;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        .temperature {
+            font-size: 28px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="weather-container">
+        <h1>Weather App</h1>
+        <input type="text" id="locationInput" placeholder="Enter city name">
+        <br>
+        <button onclick="getWeather()">Get Weather</button>
+
+        <div class="result" id="weatherResult"></div>
+    </div>
+
+    <script>
+        async function getWeather() {
+            const location = document.getElementById("locationInput").value;
+            const apiKey = "b24d3a32ac8f42ccbea44647261802";
+            const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=yes`;
+
+            if (location === "") {
+                alert("Please enter a location");
+                return;
+            }
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.error) {
+                    document.getElementById("weatherResult").innerHTML =
+                        `<p style="color:red;">Location not found</p>`;
+                    return;
+                }
+
+                const temperature = data.current.temp_c;
+                const condition = data.current.condition.text;
+                const icon = data.current.condition.icon;
+
+                document.getElementById("weatherResult").innerHTML = `
+                <h2>${data.location.name}, ${data.location.country}</h2>
+                <img src="https:${icon}" alt="weather icon">
+                <div class="temperature">${temperature}°C</div>
+                <p>${condition}</p>
+            `;
+
+            } catch (error) {
+                document.getElementById("weatherResult").innerHTML =
+                    `<p style="color:red;">Something went wrong</p>`;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

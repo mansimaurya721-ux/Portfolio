@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pro Resume Builder</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px 3px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #667eea;
+            color: white;
+        }
+
+        .resume {
+            display: flex;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            min-height: 300px;
+        }
+
+        .sidebar {
+            width: 30%;
+            background: #f1f5f9;
+            padding: 15px;
+        }
+
+        .main {
+            width: 70%;
+            padding: 20px;
+        }
+
+        .template2 {
+            background: #1e293b;
+            color: white;
+        }
+
+        .template2 .sidebar {
+            background: #0f172a;
+            color: white;
+        }
+
+        .photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+        }
+
+        .photoPlaceholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .skill {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 20px;
+            margin: 3px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>PRO Resume Builder</h2>
+
+        <input id="name" placeholder="Full Name">
+        <input id="email" placeholder="Email">
+        <input id="phone" placeholder="Phone">
+        <input id="linkedin" placeholder="LinkedIn">
+        <input id="github" placeholder="GitHub">
+
+        <textarea id="skills" placeholder="Skills (comma separated)"></textarea>
+        <textarea id="education" placeholder="Education"></textarea>
+        <textarea id="experience" placeholder="Experience"></textarea>
+
+        <label>Profile Photo</label>
+        <input type="file" id="photoInput">
+
+        <button onclick="build()">Generate Resume</button>
+        <button onclick="downloadPDF()">Download PDF</button>
+        <button onclick="setTemplate(1)">Template 1</button>
+        <button onclick="setTemplate(2)">Template 2</button>
+
+        <div id="resume"></div>
+
+    </div>
+
+    <script>
+
+        let template = 1
+        let photoURL = ""
+
+        photoInput.onchange = e => {
+            if (e.target.files[0]) {
+                photoURL = URL.createObjectURL(e.target.files[0])
+            }
+        }
+
+        function build() {
+
+            let skillsArr = skills.value
+                ? skills.value.split(",")
+                : []
+
+            let skillHTML = skillsArr
+                .map(s => `<span class="skill">${s.trim()}</span>`)
+                .join("")
+
+            let photoHTML = photoURL
+                ? `<img src="${photoURL}" class="photo">`
+                : `<div class="photoPlaceholder">No Photo</div>`
+
+            resume.className = template == 2 ? "resume template2" : "resume"
+
+            resume.innerHTML = `
+<div class="sidebar">
+
+${photoHTML}
+
+<h2>${name.value || ""}</h2>
+<p>${email.value || ""}</p>
+<p>${phone.value || ""}</p>
+<p>${linkedin.value || ""}</p>
+<p>${github.value || ""}</p>
+
+<h3>Skills</h3>
+${skillHTML}
+
+</div>
+
+<div class="main">
+
+<h3>Education</h3>
+<p>${education.value || ""}</p>
+
+<h3>Experience</h3>
+<p>${experience.value || ""}</p>
+
+</div>
+`
+        }
+
+        function downloadPDF() {
+            if (!resume.innerHTML) {
+                alert("Generate resume first")
+                return
+            }
+            html2pdf().from(resume).save("resume.pdf")
+        }
+
+        function setTemplate(t) {
+            template = t
+            build()
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resume Builder Web App</title>
+
+    <!-- PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .form,
+        .resume {
+            background: white;
+            padding: 20px;
+            width: 48%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            margin-right: 5px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .resume h2 {
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            margin-top: 15px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 3px;
+        }
+
+        @media(max-width: 800px) {
+
+            .form,
+            .resume {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Resume Builder</h1>
+
+    <div class="container">
+
+        <div class="form">
+            <input id="name" placeholder="Full Name">
+            <input id="email" placeholder="Email">
+            <input id="phone" placeholder="Phone">
+            <input id="address" placeholder="Address">
+
+            <textarea id="skills" placeholder="Skills (comma separated)"></textarea>
+            <textarea id="education" placeholder="Education"></textarea>
+            <textarea id="experience" placeholder="Experience"></textarea>
+            <textarea id="projects" placeholder="Projects"></textarea>
+
+            <button onclick="generateResume()">Generate Resume</button>
+            <button onclick="downloadPDF()">Download PDF</button>
+        </div>
+
+        <div class="resume" id="resume">
+            <h2>Your Resume Preview</h2>
+            <p>Fill the form and click Generate Resume</p>
+        </div>
+
+    </div>
+
+    <script>
+        function generateResume() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const address = document.getElementById("address").value;
+            const skills = document.getElementById("skills").value.split(",");
+            const education = document.getElementById("education").value;
+            const experience = document.getElementById("experience").value;
+            const projects = document.getElementById("projects").value;
+
+            let skillList = skills.map(s => `<li>${s.trim()}</li>`).join("");
+
+            document.getElementById("resume").innerHTML = `
+        <h2>${name}</h2>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Phone:</b> ${phone}</p>
+        <p><b>Address:</b> ${address}</p>
+
+        <div class="section-title">Skills</div>
+        <ul>${skillList}</ul>
+
+        <div class="section-title">Education</div>
+        <p>${education}</p>
+
+        <div class="section-title">Experience</div>
+        <p>${experience}</p>
+
+        <div class="section-title">Projects</div>
+        <p>${projects}</p>
+    `;
+        }
+
+        function downloadPDF() {
+            const element = document.getElementById("resume");
+
+            const opt = {
+                margin: 0.5,
+                filename: 'resume.pdf',
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+
+</body>
+
+</html>
