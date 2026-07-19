@@ -231,7 +231,15 @@ if (topBtn) {
 // Contact Form Validation
 // ===============================
 
-const form = document.querySelector("form");
+// ===============================
+// EmailJS Contact Form
+// ===============================
+
+emailjs.init({
+    publicKey: "S-w9rL9Znw5GWPGC8",
+});
+
+const form = document.getElementById("contact-form");
 
 if (form) {
 
@@ -239,33 +247,35 @@ if (form) {
 
         e.preventDefault();
 
-        const inputs = form.querySelectorAll("input, textarea");
+        const status = document.getElementById("status");
 
-        let valid = true;
+        status.innerHTML = "Sending...";
 
-        inputs.forEach(input => {
+        emailjs.send("service_okwt0t6", "template_h2mxtes", {
 
-            if (input.value.trim() === "") {
+            name: document.getElementById("name").value,
 
-                input.style.border = "2px solid red";
+            email: document.getElementById("email").value,
 
-                valid = false;
+            message: document.getElementById("message").value
 
-            } else {
+        })
 
-                input.style.border = "none";
+        .then(() => {
 
-            }
-
-        });
-
-        if (valid) {
-
-            alert("Thank you! Your message has been received.");
+            status.innerHTML = "✅ Message sent successfully!";
 
             form.reset();
 
-        }
+        })
+
+        .catch((error) => {
+
+            status.innerHTML = "❌ Failed to send message.";
+
+            console.error(error);
+
+        });
 
     });
 

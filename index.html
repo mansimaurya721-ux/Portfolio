@@ -291,26 +291,25 @@
                 </div>
 
             </div>
-
             <div class="contact-form">
 
-                <form>
+                <form id="contact-form">
 
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-                    <input type="email" placeholder="Your Email" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
 
-                    <textarea placeholder="Tell me about your project..." required></textarea>
+                    <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
 
                     <button type="submit">
-                    Send Message
-                </button>
+            Send Message
+        </button>
 
                 </form>
 
-            </div>
+                <p id="status"></p>
 
-        </div>
+            </div>
 
     </section>
 
@@ -327,6 +326,7 @@
         </p>
 
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 
