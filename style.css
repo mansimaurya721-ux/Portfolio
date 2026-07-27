@@ -16,6 +16,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html {
+    scroll-padding-top: 90px;
+}
+
 
 /* ==========================
    BODY
@@ -51,8 +55,9 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(15, 23, 42, .8);
+    background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     z-index: 1000;
 }
 
@@ -78,13 +83,14 @@ header {
 
 nav {
     display: flex;
-    gap: 35px;
+    gap: 30px;
+    align-items: center;
 }
 
 nav a {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
-    transition: .3s;
+    transition: 0.3s;
     position: relative;
 }
 
@@ -99,7 +105,7 @@ nav a::after {
     position: absolute;
     left: 0;
     bottom: -5px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 nav a:hover::after {
@@ -120,11 +126,12 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 50px;
     padding: 120px 10%;
 }
 
 
-/* Left */
+/* Hero Text */
 
 .hero-text {
     width: 55%;
@@ -138,6 +145,7 @@ nav a:hover {
 .hero-text h1 {
     font-size: 60px;
     margin-top: 10px;
+    line-height: 1.2;
 }
 
 .hero-text h2 {
@@ -162,26 +170,29 @@ nav a:hover {
     margin-top: 40px;
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .btn {
+    display: inline-block;
     background: #3b82f6;
     padding: 15px 35px;
     border-radius: 40px;
     font-weight: 600;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, .5);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
 }
 
 .btn2 {
+    display: inline-block;
     border: 2px solid #3b82f6;
-    padding: 15px 35px;
+    padding: 13px 35px;
     border-radius: 40px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .btn2:hover {
@@ -205,8 +216,8 @@ nav a:hover {
     object-fit: cover;
     border-radius: 50%;
     border: 6px solid #3b82f6;
-    box-shadow: 0 0 40px rgba(59, 130, 246, .5);
-    transition: .5s;
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+    transition: 0.5s;
 }
 
 .hero-image img:hover {
@@ -215,58 +226,7 @@ nav a:hover {
 
 
 /* ==========================
-   RESPONSIVE
-========================== */
-
-@media(max-width:992px) {
-    .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding-top: 150px;
-    }
-    .hero-text {
-        width: 100%;
-        margin-top: 40px;
-    }
-    .hero-image {
-        width: 100%;
-    }
-    .hero-image img {
-        width: 280px;
-        height: 280px;
-    }
-    header {
-        padding: 20px;
-    }
-    nav {
-        gap: 20px;
-    }
-}
-
-@media(max-width:768px) {
-    header {
-        flex-direction: column;
-        gap: 20px;
-    }
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .hero-text h1 {
-        font-size: 42px;
-    }
-    .hero-text h2 {
-        font-size: 24px;
-    }
-    .buttons {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-}
-
-
-/* ==========================
-   COMMON SECTION STYLING
+   COMMON SECTION
 ========================== */
 
 section {
@@ -301,13 +261,12 @@ section h2::after {
     border-radius: 20px;
     margin: 60px 10%;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 #about p {
     max-width: 850px;
-    margin: auto;
-    margin-top: 35px;
+    margin: 35px auto 0;
     line-height: 2;
     color: #cbd5e1;
     font-size: 18px;
@@ -333,14 +292,14 @@ section h2::after {
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
-    transition: .4s;
+    transition: 0.4s;
     border: 1px solid transparent;
 }
 
 .skill:hover {
     transform: translateY(-10px);
     border-color: #3b82f6;
-    box-shadow: 0 10px 25px rgba(59, 130, 246, .4);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
 }
 
 .skill::before {
@@ -349,9 +308,6 @@ section h2::after {
     font-size: 40px;
     margin-bottom: 15px;
 }
-
-
-/* Different Icons */
 
 .skill:nth-child(1)::before {
     content: "🌐";
@@ -366,7 +322,7 @@ section h2::after {
 }
 
 .skill:nth-child(4)::before {
-    content: "⚛";
+    content: "⚛️";
 }
 
 .skill:nth-child(5)::before {
@@ -382,14 +338,13 @@ section h2::after {
 }
 
 .skill:nth-child(8)::before {
-<<<<<<< HEAD
-    content: "🗄";
+    content: "🗄️";
 }
 
 
-/* ===================================
+/* ==========================
    PROJECTS SECTION
-=================================== */
+========================== */
 
 #projects {
     padding: 100px 10%;
@@ -526,64 +481,9 @@ section h2::after {
 }
 
 
-/* ===================================
-   PROJECTS RESPONSIVE
-=================================== */
-
-@media(max-width:768px) {
-    #projects {
-        padding: 80px 20px;
-    }
-    .project-container {
-        grid-template-columns: 1fr;
-        margin-top: 40px;
-    }
-    .project-image {
-        height: 200px;
-    }
-    .project-content {
-        padding: 25px 20px;
-    }
-    .project-content h3 {
-        font-size: 21px;
-    }
-    .project-buttons {
-        flex-direction: column;
-    }
-=======
-    content: "🍃";
->>>>>>> e58aa74d5cec5a6905f0663376f399466c1bdabd
-}
-
-
 /* ==========================
-   RESPONSIVE
-========================== */
-
-@media(max-width:768px) {
-    section {
-        padding: 80px 20px;
-    }
-    #about {
-        margin: 40px 20px;
-    }
-    section h2 {
-        font-size: 32px;
-    }
-    #about p {
-        font-size: 16px;
-        line-height: 1.8;
-    }
-    .skill {
-        padding: 25px 15px;
-        font-size: 16px;
-    }
-}
-
-
-/* ===================================
    SERVICES SECTION
-=================================== */
+========================== */
 
 #services {
     padding: 100px 10%;
@@ -600,7 +500,7 @@ section h2::after {
     background: #1e293b;
     border-radius: 20px;
     padding: 40px 30px;
-    transition: .4s;
+    transition: 0.4s;
     border: 1px solid transparent;
     text-align: center;
 }
@@ -608,7 +508,7 @@ section h2::after {
 .service:hover {
     transform: translateY(-12px);
     border-color: #3b82f6;
-    box-shadow: 0 15px 35px rgba(59, 130, 246, .35);
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.35);
 }
 
 .service h3 {
@@ -625,6 +525,12 @@ section h2::after {
 
 
 /* Service Icons */
+
+.service::before {
+    display: block;
+    font-size: 55px;
+    margin-bottom: 25px;
+}
 
 .service:nth-child(1)::before {
     content: "🌐";
@@ -650,16 +556,10 @@ section h2::after {
     content: "⚡";
 }
 
-.service::before {
-    display: block;
-    font-size: 55px;
-    margin-bottom: 25px;
-}
 
-
-/* ===================================
+/* ==========================
    WHY HIRE ME
-=================================== */
+========================== */
 
 #why {
     padding: 100px 10%;
@@ -677,10 +577,10 @@ section h2::after {
     border-left: 5px solid #3b82f6;
     padding: 25px;
     border-radius: 15px;
-    color: #fff;
+    color: #ffffff;
     font-size: 18px;
     font-weight: 500;
-    transition: .35s;
+    transition: 0.35s;
 }
 
 .why-container div:hover {
@@ -689,9 +589,9 @@ section h2::after {
 }
 
 
-/* ===================================
+/* ==========================
    FREELANCE BANNER
-=================================== */
+========================== */
 
 .freelance {
     margin: 100px 10%;
@@ -702,7 +602,7 @@ section h2::after {
 }
 
 .freelance h2 {
-    color: #fff;
+    color: #ffffff;
     font-size: 40px;
 }
 
@@ -719,33 +619,38 @@ section h2::after {
 }
 
 
-/* ===================================
-   RESPONSIVE
-=================================== */
+/* ==========================
+   PROCESS
+========================== */
 
-@media(max-width:768px) {
-    .service {
-        padding: 30px 20px;
-    }
-    .service h3 {
-        font-size: 22px;
-    }
-    .freelance {
-        padding: 40px 20px;
-        margin: 60px 20px;
-    }
-    .freelance h2 {
-        font-size: 30px;
-    }
-    .freelance p {
-        font-size: 16px;
-    }
+#process {
+    text-align: center;
+}
+
+.process-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.process-container div {
+    background: #1e293b;
+    padding: 25px 20px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.process-container div:hover {
+    border-color: #3b82f6;
+    transform: translateY(-5px);
 }
 
 
-/* ===================================
+/* ==========================
    CONTACT SECTION
-=================================== */
+========================== */
 
 #contact {
     padding: 100px 10%;
@@ -769,11 +674,6 @@ section h2::after {
     margin-bottom: 18px;
 }
 
-.contact-info i {
-    color: #3b82f6;
-    margin-right: 10px;
-}
-
 .social-icons {
     display: flex;
     gap: 20px;
@@ -789,14 +689,17 @@ section h2::after {
     justify-content: center;
     align-items: center;
     font-size: 22px;
-    color: #fff;
-    transition: .35s;
+    color: #ffffff;
+    transition: 0.35s;
 }
 
 .social-icons a:hover {
     background: #3b82f6;
     transform: translateY(-8px);
 }
+
+
+/* Contact Form */
 
 .contact-form {
     background: #1e293b;
@@ -810,10 +713,15 @@ section h2::after {
     padding: 15px;
     margin-bottom: 20px;
     background: #0f172a;
-    color: white;
-    border: none;
+    color: #ffffff;
+    border: 1px solid transparent;
     border-radius: 10px;
     outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #3b82f6;
 }
 
 .contact-form textarea {
@@ -827,21 +735,21 @@ section h2::after {
     border: none;
     border-radius: 40px;
     background: #3b82f6;
-    color: white;
+    color: #ffffff;
     font-size: 17px;
     cursor: pointer;
-    transition: .35s;
+    transition: 0.35s;
 }
 
 .contact-form button:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, .5);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
 }
 
 
-/* ===================================
+/* ==========================
    FOOTER
-=================================== */
+========================== */
 
 footer {
     margin-top: 80px;
@@ -857,18 +765,181 @@ footer span {
 }
 
 
-/* ===================================
-   RESPONSIVE
-=================================== */
+/* ==========================
+   RESPONSIVE - 992px
+========================== */
 
-@media(max-width:900px) {
+@media (max-width: 992px) {
+    header {
+        padding: 20px 5%;
+    }
+    nav {
+        gap: 20px;
+    }
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 150px 5% 80px;
+    }
+    .hero-text {
+        width: 100%;
+    }
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-image {
+        width: 100%;
+    }
+    .hero-image img {
+        width: 280px;
+        height: 280px;
+    }
+    .buttons {
+        justify-content: center;
+    }
+    section {
+        padding: 80px 5%;
+    }
+    #about {
+        margin: 40px 5%;
+    }
     .contact-container {
         grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================
+   RESPONSIVE - 768px
+========================== */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav a {
+        font-size: 13px;
+    }
+    .hero {
+        padding-top: 180px;
+    }
+    .hero-text h1 {
+        font-size: 42px;
+    }
+    .hero-text h2 {
+        font-size: 24px;
+    }
+    .hero-text h3 {
+        font-size: 18px;
+    }
+    .hero-image img {
+        width: 240px;
+        height: 240px;
+    }
+    section {
+        padding: 70px 20px;
+    }
+    section h2 {
+        font-size: 32px;
+    }
+    #about {
+        margin: 30px 20px;
+    }
+    #about p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+    .skill {
+        padding: 25px 15px;
+        font-size: 16px;
+    }
+    .project-container {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+    }
+    .project-image {
+        height: 200px;
+    }
+    .project-content {
+        padding: 25px 20px;
+    }
+    .project-buttons {
+        flex-direction: column;
+    }
+    .service {
+        padding: 30px 20px;
+    }
+    .service h3 {
+        font-size: 22px;
+    }
+    .freelance {
+        padding: 40px 20px;
+        margin: 60px 20px;
+    }
+    .freelance h2 {
+        font-size: 30px;
+    }
+    .freelance p {
+        font-size: 16px;
+    }
+    .contact-form {
+        padding: 25px 20px;
     }
     .contact-info {
         text-align: center;
     }
     .social-icons {
         justify-content: center;
+    }
+}
+
+
+/* ==========================
+   RESPONSIVE - 480px
+========================== */
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 24px;
+    }
+    nav {
+        gap: 10px;
+    }
+    nav a {
+        font-size: 12px;
+    }
+    .hero-text h1 {
+        font-size: 34px;
+    }
+    .hero-text h2 {
+        font-size: 20px;
+    }
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn,
+    .btn2 {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+    .project-content h3 {
+        font-size: 20px;
+    }
+    .freelance h2 {
+        font-size: 26px;
     }
 }
