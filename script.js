@@ -231,7 +231,19 @@ if (topBtn) {
 // Contact Form Validation
 // ===============================
 
+<<<<<<< HEAD
 const form = document.querySelector("form");
+=======
+// ===============================
+// EmailJS Contact Form
+// ===============================
+
+emailjs.init({
+    publicKey: "S-w9rL9Znw5GWPGC8",
+});
+
+const form = document.getElementById("contact-form");
+>>>>>>> e58aa74d5cec5a6905f0663376f399466c1bdabd
 
 if (form) {
 
@@ -239,6 +251,7 @@ if (form) {
 
         e.preventDefault();
 
+<<<<<<< HEAD
         const inputs = form.querySelectorAll("input, textarea");
 
         let valid = true;
@@ -266,6 +279,37 @@ if (form) {
             form.reset();
 
         }
+=======
+        const status = document.getElementById("status");
+
+        status.innerHTML = "Sending...";
+
+        emailjs.send("service_okwt0t6", "template_h2mxtes", {
+
+            name: document.getElementById("name").value,
+
+            email: document.getElementById("email").value,
+
+            message: document.getElementById("message").value
+
+        })
+
+        .then(() => {
+
+            status.innerHTML = "✅ Message sent successfully!";
+
+            form.reset();
+
+        })
+
+        .catch((error) => {
+
+            status.innerHTML = "❌ Failed to send message.";
+
+            console.error(error);
+
+        });
+>>>>>>> e58aa74d5cec5a6905f0663376f399466c1bdabd
 
     });
 
