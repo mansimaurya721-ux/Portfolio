@@ -2,24 +2,29 @@
 // Smooth Scrolling
 // ===============================
 
-document.querySelectorAll('nav a').forEach(anchor => {
+document.querySelectorAll("nav a").forEach(anchor => {
 
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener("click", function(e) {
 
-        e.preventDefault();
+        const targetId = this.getAttribute("href");
 
-        const target = document.querySelector(this.getAttribute('href'));
+        // Only handle internal section links
+        if (targetId && targetId.startsWith("#")) {
 
-        target.scrollIntoView({
+            e.preventDefault();
 
-            behavior: 'smooth'
+            const target = document.querySelector(targetId);
 
-        });
+            if (target) {
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        }
 
     });
 
 });
-
 
 
 // ===============================
@@ -29,6 +34,8 @@ document.querySelectorAll('nav a').forEach(anchor => {
 const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
+
+    if (!header) return;
 
     if (window.scrollY > 50) {
 
@@ -41,7 +48,6 @@ window.addEventListener("scroll", () => {
     }
 
 });
-
 
 
 // ===============================
@@ -59,7 +65,7 @@ window.addEventListener("scroll", () => {
 
         const sectionTop = section.offsetTop - 120;
 
-        if (pageYOffset >= sectionTop) {
+        if (window.scrollY >= sectionTop) {
 
             current = section.getAttribute("id");
 
@@ -82,7 +88,6 @@ window.addEventListener("scroll", () => {
 });
 
 
-
 // ===============================
 // Typing Effect
 // ===============================
@@ -92,13 +97,9 @@ const typing = document.getElementById("typing");
 if (typing) {
 
     const words = [
-
         "Front-End Developer",
-
         "Responsive Website Expert",
-
         "Freelancer"
-
     ];
 
     let wordIndex = 0;
@@ -156,7 +157,6 @@ if (typing) {
 }
 
 
-
 // ===============================
 // Scroll Reveal
 // ===============================
@@ -174,17 +174,15 @@ const observer = new IntersectionObserver((entries) => {
     });
 
 }, {
-
     threshold: 0.2
-
 });
+
 
 document.querySelectorAll("section").forEach(section => {
 
     observer.observe(section);
 
 });
-
 
 
 // ===============================
@@ -209,6 +207,7 @@ window.addEventListener("scroll", () => {
 
 });
 
+
 if (topBtn) {
 
     topBtn.addEventListener("click", () => {
@@ -216,7 +215,6 @@ if (topBtn) {
         window.scrollTo({
 
             top: 0,
-
             behavior: "smooth"
 
         });
@@ -226,24 +224,28 @@ if (topBtn) {
 }
 
 
-
-// ===============================
-// Contact Form Validation
-// ===============================
-
-<<<<<<< HEAD
-const form = document.querySelector("form");
-=======
 // ===============================
 // EmailJS Contact Form
 // ===============================
 
-emailjs.init({
-    publicKey: "S-w9rL9Znw5GWPGC8",
-});
+// Initialize EmailJS
+if (typeof emailjs !== "undefined") {
 
+    emailjs.init({
+        publicKey: "S-w9rL9Znw5GWPGC8"
+    });
+
+} else {
+
+    console.error("EmailJS library is not loaded.");
+
+}
+
+
+// Get Contact Form
 const form = document.getElementById("contact-form");
->>>>>>> e58aa74d5cec5a6905f0663376f399466c1bdabd
+const status = document.getElementById("status");
+
 
 if (form) {
 
@@ -251,70 +253,162 @@ if (form) {
 
         e.preventDefault();
 
-<<<<<<< HEAD
-        const inputs = form.querySelectorAll("input, textarea");
 
-        let valid = true;
+        // Get input fields
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const messageInput = document.getElementById("message");
 
-        inputs.forEach(input => {
 
-            if (input.value.trim() === "") {
+        // Check fields exist
+        if (!nameInput || !emailInput || !messageInput) {
 
-                input.style.border = "2px solid red";
+            console.error("Contact form fields are missing.");
 
-                valid = false;
+            if (status) {
+                status.innerHTML = "❌ Form configuration error.";
+            }
 
-            } else {
+            return;
 
-                input.style.border = "none";
+        }
+
+
+        // Get values
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+
+
+        // ===============================
+        // Validation
+        // ===============================
+
+        if (name === "" || email === "" || message === "") {
+
+            if (status) {
+                status.innerHTML = "⚠️ Please fill in all fields.";
+            }
+
+            return;
+
+        }
+
+
+        // Email validation
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if (!emailPattern.test(email)) {
+
+            if (status) {
+                status.innerHTML = "⚠️ Please enter a valid email address.";
+            }
+
+            return;
+
+        }
+
+
+        // ===============================
+        // Show Sending Message
+        // ===============================
+
+        if (status) {
+
+            status.innerHTML = "📨 Sending message...";
+
+        }
+
+
+        // Disable submit button
+        const submitButton = form.querySelector(
+            'button[type="submit"], input[type="submit"]'
+        );
+
+        if (submitButton) {
+
+            submitButton.disabled = true;
+
+        }
+
+
+        // ===============================
+        // Send Email Using EmailJS
+        // ===============================
+
+        emailjs.send(
+            "service_okwt0t6",
+            "template_h2mxtes", {
+                name: name,
+                email: email,
+                message: message
+            }
+        )
+
+        .then(function(response) {
+
+            console.log(
+                "EmailJS SUCCESS:",
+                response.status,
+                response.text
+            );
+
+
+            if (status) {
+
+                status.innerHTML =
+                    "✅ Message sent successfully!";
+
+            }
+
+
+            // Clear form
+            form.reset();
+
+
+            // Remove validation borders
+            const inputs =
+                form.querySelectorAll("input, textarea");
+
+            inputs.forEach(input => {
+
+                input.style.border = "";
+
+            });
+
+
+        })
+
+        .catch(function(error) {
+
+            console.error("EmailJS ERROR:", error);
+
+
+            if (status) {
+
+                status.innerHTML =
+                    "❌ Failed to send message. Please try again.";
+
+            }
+
+        })
+
+        .finally(function() {
+
+            // Enable button again
+            if (submitButton) {
+
+                submitButton.disabled = false;
 
             }
 
         });
 
-        if (valid) {
-
-            alert("Thank you! Your message has been received.");
-
-            form.reset();
-
-        }
-=======
-        const status = document.getElementById("status");
-
-        status.innerHTML = "Sending...";
-
-        emailjs.send("service_okwt0t6", "template_h2mxtes", {
-
-            name: document.getElementById("name").value,
-
-            email: document.getElementById("email").value,
-
-            message: document.getElementById("message").value
-
-        })
-
-        .then(() => {
-
-            status.innerHTML = "✅ Message sent successfully!";
-
-            form.reset();
-
-        })
-
-        .catch((error) => {
-
-            status.innerHTML = "❌ Failed to send message.";
-
-            console.error(error);
-
-        });
->>>>>>> e58aa74d5cec5a6905f0663376f399466c1bdabd
-
     });
 
 }
-
 
 
 // ===============================
@@ -331,8 +425,16 @@ if (heroImage) {
 
         position = position === 0 ? 15 : 0;
 
-        heroImage.style.transform = `translateY(${position}px)`;
+        heroImage.style.transform =
+            `translateY(${position}px)`;
 
     }, 2000);
 
 }
+
+
+// ===============================
+// Console Message
+// ===============================
+
+console.log("Portfolio JavaScript loaded successfully.");
