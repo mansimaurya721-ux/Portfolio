@@ -5,328 +5,372 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mansi Maurya | Front-End Developer</title>
+    <meta name="description" content="Mansi Maurya - Full Stack Developer, BCA Student and Web Developer. Explore my projects, skills and services.">
+
+    <meta name="keywords" content="Mansi Maurya, Full Stack Developer, Web Developer, React Developer, MERN Developer, Portfolio">
+
+    <meta name="author" content="Mansi Maurya">
+
+    <title>Mansi Maurya | Full Stack Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
     <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- ================= PRELOADER ================= -->
 
-    <header>
+    <div id="preloader">
 
-        <div class="logo">
-            Mansi<span>.</span>
+        <div class="loader-box">
+
+            <div class="loader-logo">
+                M<span>.</span>
+            </div>
+
+            <div class="loader-line">
+                <span></span>
+            </div>
+
+            <p>Initializing portfolio...</p>
+
         </div>
 
-        <nav>
+    </div>
 
-            <a href="#home">Home</a>
 
-            <a href="#about">About</a>
+    <!-- ================= BACKGROUND ================= -->
 
-            <a href="#skills">Skills</a>
+    <div class="background-grid"></div>
 
-            <a href="#services">Services</a>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
 
-            <a href="#why">Why Me</a>
 
-            <a href="#process">Process</a>
+    <!-- ================= HEADER ================= -->
 
-            <a href="#projects">Projects</a>
+    <header id="header">
 
-            <a href="#contact">Contact</a>
+        <div class="container nav-container">
 
-        </nav>
+            <a href="#home" class="logo">
+                Mansi<span>.</span>
+            </a>
+
+            <nav id="navbar">
+
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+
+            </nav>
+
+            <a href="#contact" class="nav-btn">
+                Let's Talk <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
 
     </header>
 
 
     <!-- ================= HERO ================= -->
 
-    <section id="home" class="hero">
+    <main>
 
-        <div class="hero-text">
+        <section id="home" class="hero section">
 
-            <h3>Hello, I'm</h3>
+            <div class="container hero-container">
 
-            <h1>Mansi Maurya</h1>
+                <div class="hero-content reveal">
 
-            <h2>Front-End Web Developer</h2>
+                    <div class="status-pill">
+                        <span class="status-dot"></span> Available for freelance projects
+                    </div>
 
-            <p>
-                I create responsive, modern and fast-loading websites using HTML, CSS and JavaScript. Currently available for freelance projects.
-            </p>
-
-            <div class="buttons">
-
-                <a href="#contact" class="btn">
-                    Hire Me
-                </a>
-
-                <a href="resume/mansi_resume.pdf" class="btn2" target="_blank">
-                    Download Resume
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-image">
-
-            <img src="image/my image.jpeg" alt="Mansi Maurya">
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section id="about">
-
-        <h2>About Me</h2>
-
-        <p>
-            I'm a passionate Front-End Developer who enjoys building responsive, user-friendly and visually appealing websites. I help individuals, startups and businesses transform their ideas into beautiful web experiences.
-        </p>
-
-    </section>
-
-
-    <!-- ================= SKILLS ================= -->
-
-    <section id="skills">
-
-        <h2>Technical Skills</h2>
-
-        <div class="skill-container">
-
-            <div class="skill">HTML5</div>
-
-            <div class="skill">CSS3</div>
-
-            <div class="skill">JavaScript</div>
-
-            <div class="skill">React</div>
-
-            <div class="skill">Git</div>
-
-            <div class="skill">GitHub</div>
-
-            <div class="skill">Java</div>
-
-            <div class="skill">MySQL</div>
-
-            <div class="skill">MongoDB</div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= SERVICES ================= -->
-
-    <section id="services">
-
-        <h2>Services I Offer</h2>
-
-        <div class="service-container">
-
-            <div class="service">
-
-                <h3>Responsive Website</h3>
-
-                <p>
-                    Modern websites that work perfectly on every device.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <h3>Landing Page</h3>
-
-                <p>
-                    High-converting landing pages for businesses and startups.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <h3>Portfolio Website</h3>
-
-                <p>
-                    Professional personal portfolio websites.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <h3>Website Redesign</h3>
-
-                <p>
-                    Give your old website a fresh modern look.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <h3>Bug Fixing</h3>
-
-                <p>
-                    Fix HTML, CSS and JavaScript issues quickly.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <h3>PSD/Figma to HTML</h3>
-
-                <p>
-                    Convert your design into a responsive website.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section id="projects">
-
-        <h2>My Projects</h2>
-
-        <p class="section-description">
-            Here are some of the projects I have built using modern web technologies.
-        </p>
-
-
-        <div class="project-container">
-
-
-            <!-- Project 1 -->
-
-            <div class="project-card">
-
-                <div class="project-image">
-
-                    <img src="portfolio-project.png" alt="Personal Portfolio Website">
-
-                </div>
-
-
-                <div class="project-content">
-
-                    <h3>Personal Portfolio Website</h3>
-
-                    <p>
-                        A modern and responsive personal portfolio website designed to showcase my skills, services, projects and professional profile.
+                    <p class="hero-small">
+                        HELLO, I'M
                     </p>
 
+                    <h1>
+                        Mansi
+                        <span>Maurya.</span>
+                    </h1>
 
-                    <div class="project-tech">
+                    <h2>
+                        <span id="typing">Full Stack Developer</span>
+                        <span class="cursor">|</span>
+                    </h2>
 
-                        <span>HTML</span>
-
-                        <span>CSS</span>
-
-                        <span>JavaScript</span>
-
-                    </div>
-
-
-                    <div class="project-buttons">
-
-                        <a href="https://mansimaurya.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-btn">
-
-                            Live Demo
-
-                        </a>
-
-
-                        <a href="https://github.com/mansimaurya721-ux/Portfolio" target="_blank" rel="noopener noreferrer" class="project-btn github-btn">
-
-                            GitHub
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Project 2 -->
-
-            <div class="project-card">
-
-                <div class="project-image">
-
-                    <img src="ai-journal.png" alt="AI Journal System">
-
-                </div>
-
-
-                <div class="project-content">
-
-                    <h3>AI Journal System</h3>
-
-                    <p>
-                        A full-stack AI-powered journal application designed to help users create and manage journal entries with a modern and user-friendly interface.
+                    <p class="hero-description">
+                        I build modern, responsive and user-focused web experiences with clean code and thoughtful design. Currently growing as a Full Stack Developer and MERN learner.
                     </p>
 
+                    <div class="hero-buttons">
 
-                    <div class="project-tech">
+                        <a href="#projects" class="btn primary-btn">
+                            View My Work
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
 
-                        <span>React</span>
+                        <a href="#contact" class="btn secondary-btn">
+                            Contact Me
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </a>
 
-                        <span>Node.js</span>
+                    </div>
 
-                        <span>Express</span>
+                    <div class="hero-socials">
 
-                        <span>MongoDB</span>
+                        <a href="https://github.com/mansimaurya721-ux" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HERO VISUAL -->
+
+                <div class="hero-visual reveal">
+
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+                    <div class="orbit orbit-three"></div>
+
+                    <div class="hero-card">
+
+                        <div class="terminal-top">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                            <small>mansi.dev</small>
+
+                        </div>
+
+                        <div class="code-content">
+
+                            <p>
+                                <span class="purple">const</span> developer =
+                            </p>
+
+                            <p class="indent">
+                                {
+                            </p>
+
+                            <p class="indent">
+                                name:
+                                <span class="green">
+                                    "Mansi Maurya"
+                                </span>,
+                            </p>
+
+                            <p class="indent">
+                                role:
+                                <span class="green">
+                                    "Full Stack Developer"
+                                </span>,
+                            </p>
+
+                            <p class="indent">
+                                stack:
+                                <span class="green">
+                                    "MERN"
+                                </span>,
+                            </p>
+
+                            <p class="indent">
+                                passion:
+                                <span class="green">
+                                    "Building"
+                                </span>
+                            </p>
+
+                            <p>
+                                };
+                            </p>
+
+                            <p class="code-comment">
+                                // turning ideas into interfaces ✨
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="floating-card card-one">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Clean Code</span>
+                    </div>
+
+                    <div class="floating-card card-two">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <span>Responsive</span>
+                    </div>
+
+                    <div class="floating-card card-three">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>Fast UI</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section id="about" class="section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">01</span>
+
+                    <div>
+                        <p class="section-label">GET TO KNOW ME</p>
+                        <h2>About <span>Me</span></h2>
+                    </div>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-text reveal">
+
+                        <p class="lead">
+                            I'm <strong>Mansi Maurya</strong>, a BCA student and aspiring Full Stack Developer passionate about creating useful and engaging web experiences.
+                        </p>
+
+                        <p>
+                            I enjoy transforming ideas into responsive websites and applications using modern web technologies. My learning journey currently focuses on frontend development, JavaScript and the MERN stack.
+                        </p>
+
+                        <p>
+                            I believe good development is a combination of clean code, thoughtful UI and continuous learning. I'm always looking for opportunities to improve my skills by building real-world projects.
+                        </p>
+
+                        <div class="about-stats">
+
+                            <div class="stat">
+                                <strong>10+</strong>
+                                <span>Projects</span>
+                            </div>
+
+                            <div class="stat">
+                                <strong>8+</strong>
+                                <span>Technologies</span>
+                            </div>
+
+                            <div class="stat">
+                                <strong>2027</strong>
+                                <span>Graduation</span>
+                            </div>
+
+                        </div>
 
                     </div>
 
 
-                    <div class="project-buttons">
+                    <div class="about-terminal reveal">
 
-                        <a href="#" class="project-btn">
+                        <div class="terminal-window">
 
-                            Live Demo
+                            <div class="terminal-header">
 
-                        </a>
+                                <div class="terminal-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
 
+                                <span>about-me.js</span>
 
-                        <a href="https://github.com/mansimaurya721-ux/ai-journal-system" target="_blank" rel="noopener noreferrer" class="project-btn github-btn">
+                            </div>
 
-                            GitHub
+                            <div class="terminal-body">
 
-                        </a>
+                                <p>
+                                    <span class="purple">class</span>
+                                    <span class="yellow">Developer</span> {
+                                </p>
+
+                                <p class="indent">
+                                    name =
+                                    <span class="green">
+                                        "Mansi Maurya";
+                                    </span>
+                                </p>
+
+                                <p class="indent">
+                                    education =
+                                    <span class="green">
+                                        "BCA";
+                                    </span>
+                                </p>
+
+                                <p class="indent">
+                                    focus =
+                                    <span class="green">
+                                        "Full Stack Development";
+                                    </span>
+                                </p>
+
+                                <p class="indent">
+                                    learning =
+                                    <span class="green">
+                                        "MERN Stack";
+                                    </span>
+                                </p>
+
+                                <p class="indent">
+                                    mindset =
+                                    <span class="green">
+                                        "Keep Building";
+                                    </span>
+                                </p>
+
+                                <p>}</p>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
@@ -334,226 +378,767 @@
 
             </div>
 
-
-            <!-- Project 3 -->
-
-            <div class="project-card">
-
-                <div class="project-image">
-
-                    <img src="social-media.png" alt="Social Media Platform">
-
-                </div>
+        </section>
 
 
-                <div class="project-content">
+        <!-- ================= SKILLS ================= -->
 
-                    <h3>Social Media Platform</h3>
+        <section id="skills" class="section dark-section">
 
-                    <p>
-                        A full-stack social media web application with user authentication, posts, comments, likes and social interaction features.
-                    </p>
+            <div class="container">
 
+                <div class="section-heading reveal">
 
-                    <div class="project-tech">
+                    <span class="section-number">02</span>
 
-                        <span>React</span>
-
-                        <span>Node.js</span>
-
-                        <span>Express</span>
-
-                        <span>MongoDB</span>
-
-                    </div>
-
-
-                    <div class="project-buttons">
-
-                        <a href="#" class="project-btn">
-
-                            Live Demo
-
-                        </a>
-
-
-                        <a href="https://github.com/mansimaurya721-ux/social-media-platform" target="_blank" rel="noopener noreferrer" class="project-btn github-btn">
-
-                            GitHub
-
-                        </a>
-
+                    <div>
+                        <p class="section-label">MY TOOLKIT</p>
+                        <h2>Skills & <span>Technologies</span></h2>
                     </div>
 
                 </div>
 
-            </div>
 
+                <div class="skills-grid reveal">
 
-        </div>
+                    <div class="skill-card">
+                        <div class="skill-icon html">
+                            <i class="fa-brands fa-html5"></i>
+                        </div>
+                        <h3>HTML5</h3>
+                        <p>Semantic & accessible markup</p>
+                    </div>
 
-    </section>
+                    <div class="skill-card">
+                        <div class="skill-icon css">
+                            <i class="fa-brands fa-css3-alt"></i>
+                        </div>
+                        <h3>CSS3</h3>
+                        <p>Responsive modern layouts</p>
+                    </div>
 
+                    <div class="skill-card">
+                        <div class="skill-icon js">
+                            <i class="fa-brands fa-js"></i>
+                        </div>
+                        <h3>JavaScript</h3>
+                        <p>Interactive web experiences</p>
+                    </div>
 
-    <!-- ================= WHY HIRE ME ================= -->
+                    <div class="skill-card">
+                        <div class="skill-icon react">
+                            <i class="fa-brands fa-react"></i>
+                        </div>
+                        <h3>React</h3>
+                        <p>Component-based interfaces</p>
+                    </div>
 
-    <section id="why">
+                    <div class="skill-card">
+                        <div class="skill-icon node">
+                            <i class="fa-brands fa-node-js"></i>
+                        </div>
+                        <h3>Node.js</h3>
+                        <p>Backend development</p>
+                    </div>
 
-        <h2>Why Hire Me?</h2>
+                    <div class="skill-card">
+                        <div class="skill-icon database">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h3>MongoDB</h3>
+                        <p>Database management</p>
+                    </div>
 
-        <div class="why-container">
+                    <div class="skill-card">
+                        <div class="skill-icon java">
+                            <i class="fa-brands fa-java"></i>
+                        </div>
+                        <h3>Java</h3>
+                        <p>OOP & application development</p>
+                    </div>
 
-            <div>✔ Responsive Design</div>
+                    <div class="skill-card">
+                        <div class="skill-icon python">
+                            <i class="fa-brands fa-python"></i>
+                        </div>
+                        <h3>Python</h3>
+                        <p>Programming & automation</p>
+                    </div>
 
-            <div>✔ Clean Code</div>
+                    <div class="skill-card">
+                        <div class="skill-icon git">
+                            <i class="fa-brands fa-git-alt"></i>
+                        </div>
+                        <h3>Git & GitHub</h3>
+                        <p>Version control</p>
+                    </div>
 
-            <div>✔ Mobile Friendly</div>
-
-            <div>✔ Fast Loading</div>
-
-            <div>✔ Modern UI</div>
-
-            <div>✔ On-Time Delivery</div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= FREELANCE ================= -->
-
-    <section class="freelance">
-
-        <h2>Available For Freelance Projects</h2>
-
-        <p>
-            I help startups, students, businesses and individuals build responsive, modern and high-performance websites. Let's turn your idea into reality.
-        </p>
-
-        <a href="#contact" class="btn">
-            Hire Me
-        </a>
-
-    </section>
-
-
-    <!-- ================= PROCESS ================= -->
-
-    <section id="process">
-
-        <h2>My Work Process</h2>
-
-        <div class="process-container">
-
-            <div>1. Understand Requirements</div>
-
-            <div>2. Design Layout</div>
-
-            <div>3. Develop Website</div>
-
-            <div>4. Testing</div>
-
-            <div>5. Final Delivery</div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= CONTACT ================= -->
-
-    <section id="contact">
-
-        <h2>Let's Work Together</h2>
-
-        <div class="contact-container">
-
-
-            <!-- Contact Information -->
-
-            <div class="contact-info">
-
-                <h3>Get In Touch</h3>
-
-                <p>
-                    Looking for a responsive and modern website? I'd love to help bring your ideas to life.
-                </p>
-
-                <p>📧 mansimaurya721@gmail.com</p>
-
-                <p>📱 +91 7007153571</p>
-
-                <p>📍 Gonda, Uttar Pradesh, India</p>
-
-
-                <div class="social-icons">
-
-                    <a href="https://github.com/mansimaurya721-ux" target="_blank" rel="noopener noreferrer">
-
-                        🐙
-
-                    </a>
-
-
-                    <a href="https://www.linkedin.com/in/mansi-maurya-0076813b0/" target="_blank" rel="noopener noreferrer">
-
-                        💼
-
-                    </a>
-
-
-                    <a href="mailto:mansimaurya721@gmail.com">
-
-                        ✉️
-
-                    </a>
+                    <div class="skill-card">
+                        <div class="skill-icon sql">
+                            <i class="fa-solid fa-table"></i>
+                        </div>
+                        <h3>SQL / MySQL</h3>
+                        <p>Relational databases</p>
+                    </div>
 
                 </div>
 
             </div>
 
-
-            <!-- Contact Form -->
-
-            <div class="contact-form">
-
-                <form id="contact-form">
-
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </section>
 
 
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <!-- ================= SERVICES ================= -->
+
+        <section id="services" class="section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">03</span>
+
+                    <div>
+                        <p class="section-label">WHAT I CAN DO</p>
+                        <h2>My <span>Services</span></h2>
+                    </div>
+
+                </div>
 
 
-                    <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+                <div class="services-grid">
+
+                    <article class="service-card reveal">
+
+                        <div class="service-number">01</div>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+
+                        <h3>Responsive Websites</h3>
+
+                        <p>
+                            Modern websites that look great and work smoothly across desktop, tablet and mobile devices.
+                        </p>
+
+                        <span class="service-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </article>
 
 
-                    <button type="submit">
-                        Send Message
-                    </button>
+                    <article class="service-card reveal">
 
-                </form>
+                        <div class="service-number">02</div>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+
+                        <h3>Landing Pages</h3>
+
+                        <p>
+                            Clean and engaging landing pages designed to communicate your product or service clearly.
+                        </p>
+
+                        <span class="service-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </article>
 
 
-                <p id="status"></p>
+                    <article class="service-card reveal">
+
+                        <div class="service-number">03</div>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+
+                        <h3>Website Redesign</h3>
+
+                        <p>
+                            Give an outdated website a modern visual style, better layout and improved user experience.
+                        </p>
+
+                        <span class="service-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </article>
+
+
+                    <article class="service-card reveal">
+
+                        <div class="service-number">04</div>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+
+                        <h3>Frontend Bug Fixing</h3>
+
+                        <p>
+                            Fix HTML, CSS and JavaScript issues and improve the functionality of existing websites.
+                        </p>
+
+                        <span class="service-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </article>
+
+                </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
+
+        <!-- ================= PROJECTS ================= -->
+
+        <section id="projects" class="section dark-section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">04</span>
+
+                    <div>
+                        <p class="section-label">SELECTED WORK</p>
+                        <h2>Featured <span>Projects</span></h2>
+                    </div>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+
+                    <!-- PROJECT 1 -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-image">
+
+                            <div class="project-overlay">
+
+                                <span>01</span>
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                            </div>
+
+                            <div class="project-placeholder">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <div class="project-top">
+
+                                <span class="project-type">
+                                    Portfolio
+                                </span>
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                            </div>
+
+                            <h3>Personal Portfolio Website</h3>
+
+                            <p>
+                                A modern responsive portfolio website designed to showcase my skills, services, projects and professional profile.
+                            </p>
+
+                            <div class="tech-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+
+                            <div class="project-links">
+
+                                <a href="https://mansimaurya.netlify.app/" target="_blank" rel="noopener noreferrer">
+                                    Live Demo
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+
+                                <a href="https://github.com/mansimaurya721-ux/Portfolio" target="_blank" rel="noopener noreferrer">
+                                    GitHub
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 2 -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-image">
+
+                            <div class="project-overlay">
+                                <span>02</span>
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+
+                            <div class="project-placeholder">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <div class="project-top">
+
+                                <span class="project-type">
+                                    Full Stack
+                                </span>
+
+                                <i class="fa-solid fa-code"></i>
+
+                            </div>
+
+                            <h3>AI Journal System</h3>
+
+                            <p>
+                                A full-stack AI-powered journal application designed to help users create and manage journal entries through a modern interface.
+                            </p>
+
+                            <div class="tech-tags">
+
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>Express</span>
+                                <span>MongoDB</span>
+
+                            </div>
+
+                            <div class="project-links">
+
+                                <a href="https://github.com/mansimaurya721-ux/ai-journal-system" target="_blank" rel="noopener noreferrer">
+                                    GitHub
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 3 -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-image">
+
+                            <div class="project-overlay">
+                                <span>03</span>
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+
+                            <div class="project-placeholder">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <div class="project-top">
+
+                                <span class="project-type">
+                                    Full Stack
+                                </span>
+
+                                <i class="fa-solid fa-code"></i>
+
+                            </div>
+
+                            <h3>Social Media Platform</h3>
+
+                            <p>
+                                A full-stack social media application with authentication, posts, comments, likes and social interaction features.
+                            </p>
+
+                            <div class="tech-tags">
+
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>Express</span>
+                                <span>MongoDB</span>
+
+                            </div>
+
+                            <div class="project-links">
+
+                                <a href="https://github.com/mansimaurya721-ux/social-media-platform" target="_blank" rel="noopener noreferrer">
+                                    GitHub
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 4 -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-image">
+
+                            <div class="project-overlay">
+                                <span>04</span>
+                                <i class="fa-solid fa-boxes-stacked"></i>
+                            </div>
+
+                            <div class="project-placeholder">
+                                <i class="fa-solid fa-chart-column"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <div class="project-top">
+
+                                <span class="project-type">
+                                    Java
+                                </span>
+
+                                <i class="fa-brands fa-java"></i>
+
+                            </div>
+
+                            <h3>Stock Management System</h3>
+
+                            <p>
+                                A Java Swing CRUD application for managing products, stock information and database records.
+                            </p>
+
+                            <div class="tech-tags">
+
+                                <span>Java</span>
+                                <span>Swing</span>
+                                <span>MySQL</span>
+                                <span>JDBC</span>
+
+                            </div>
+
+                            <div class="project-links">
+
+                                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                                    GitHub
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROCESS ================= -->
+
+        <section id="process" class="section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">05</span>
+
+                    <div>
+                        <p class="section-label">HOW I WORK</p>
+                        <h2>My <span>Process</span></h2>
+                    </div>
+
+                </div>
+
+
+                <div class="process-grid">
+
+                    <div class="process-item reveal">
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+
+                        <span>01</span>
+
+                        <h3>Understand</h3>
+
+                        <p>
+                            Understand the idea, requirements and goals.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item reveal">
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-pen-ruler"></i>
+                        </div>
+
+                        <span>02</span>
+
+                        <h3>Design</h3>
+
+                        <p>
+                            Plan a clean layout and intuitive user experience.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item reveal">
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+
+                        <span>03</span>
+
+                        <h3>Build</h3>
+
+                        <p>
+                            Develop responsive and maintainable code.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item reveal">
+
+                        <div class="process-icon">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+
+                        <span>04</span>
+
+                        <h3>Deliver</h3>
+
+                        <p>
+                            Test, refine and deliver the finished website.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section id="contact" class="section contact-section dark-section">
+
+            <div class="container">
+
+                <div class="contact-wrapper">
+
+                    <div class="contact-info reveal">
+
+                        <span class="section-label">
+                            LET'S CONNECT
+                        </span>
+
+                        <h2>
+                            Have a project<br>
+                            <span>in mind?</span>
+                        </h2>
+
+                        <p>
+                            I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
+                        </p>
+
+
+                        <div class="contact-details">
+
+                            <a href="mailto:mansimaurya721@gmail.com">
+
+                                <div class="contact-icon">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </div>
+
+                                <div>
+                                    <small>Email</small>
+                                    <span>mansimaurya721@gmail.com</span>
+                                </div>
+
+                            </a>
+
+
+                            <a href="https://github.com/mansimaurya721-ux" target="_blank" rel="noopener noreferrer">
+
+                                <div class="contact-icon">
+                                    <i class="fa-brands fa-github"></i>
+                                </div>
+
+                                <div>
+                                    <small>GitHub</small>
+                                    <span>@mansimaurya721-ux</span>
+                                </div>
+
+                            </a>
+
+
+                            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+
+                                <div class="contact-icon">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </div>
+
+                                <div>
+                                    <small>LinkedIn</small>
+                                    <span>Connect with me</span>
+                                </div>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONTACT FORM -->
+
+                    <div class="contact-form-box reveal">
+
+                        <div class="form-header">
+
+                            <span>Send a message</span>
+
+                            <i class="fa-regular fa-paper-plane"></i>
+
+                        </div>
+
+
+                        <form id="contact-form">
+
+                            <div class="input-group">
+
+                                <label for="name">
+                                    Your Name
+                                </label>
+
+                                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label for="email">
+                                    Email Address
+                                </label>
+
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label for="message">
+                                    Message
+                                </label>
+
+                                <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+
+                            </div>
+
+
+                            <button type="submit" class="submit-btn">
+
+                                Send Message
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+
+                            <p id="status" class="form-status"></p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
 
 
     <!-- ================= FOOTER ================= -->
 
     <footer>
 
-        <p>
-            © 2026
-            <span>Mansi Maurya</span> | Front-End Web Developer
-        </p>
+        <div class="container footer-container">
+
+            <div class="footer-logo">
+                Mansi<span>.</span>
+            </div>
+
+            <p>
+                Designed & built by Mansi Maurya ©
+                <span id="year"></span>
+            </p>
+
+            <div class="footer-socials">
+
+                <a href="https://github.com/mansimaurya721-ux" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+            </div>
+
+        </div>
 
     </footer>
+
+
+    <!-- ================= SCROLL TOP ================= -->
+
+    <button id="topBtn" aria-label="Scroll to top">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
 
 
     <!-- JavaScript -->

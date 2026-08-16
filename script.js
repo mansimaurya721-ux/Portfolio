@@ -1,83 +1,199 @@
-// ===============================
-// Smooth Scrolling
-// ===============================
-
-document.querySelectorAll("nav a").forEach(anchor => {
-
-    anchor.addEventListener("click", function(e) {
-
-        const targetId = this.getAttribute("href");
-
-        // Only handle internal section links
-        if (targetId && targetId.startsWith("#")) {
-
-            e.preventDefault();
-
-            const target = document.querySelector(targetId);
-
-            if (target) {
-                target.scrollIntoView({
-                    behavior: "smooth"
-                });
-            }
-        }
-
-    });
-
-});
+// ======================================================
+// MANSI MAURYA PORTFOLIO - COMPLETE JAVASCRIPT
+// ======================================================
 
 
-// ===============================
-// Sticky Navbar
-// ===============================
+// ======================================================
+// PRELOADER
+// ======================================================
 
-const header = document.querySelector("header");
+window.addEventListener("load", function() {
 
-window.addEventListener("scroll", () => {
+    const preloader = document.getElementById("preloader");
 
-    if (!header) return;
+    if (preloader) {
 
-    if (window.scrollY > 50) {
+        setTimeout(function() {
 
-        header.classList.add("sticky");
+            preloader.classList.add("hide");
 
-    } else {
-
-        header.classList.remove("sticky");
+        }, 800);
 
     }
 
 });
 
 
-// ===============================
-// Active Navigation
-// ===============================
+// ======================================================
+// MOBILE NAVIGATION
+// ======================================================
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
+const menuBtn = document.getElementById("menuBtn");
+const navbar = document.getElementById("navbar");
+const navLinks = document.querySelectorAll(".nav-link");
 
-window.addEventListener("scroll", () => {
 
-    let current = "";
+if (menuBtn && navbar) {
 
-    sections.forEach(section => {
+    menuBtn.addEventListener("click", function() {
 
-        const sectionTop = section.offsetTop - 120;
+        navbar.classList.toggle("mobile-open");
 
-        if (window.scrollY >= sectionTop) {
+        const icon = menuBtn.querySelector("i");
 
-            current = section.getAttribute("id");
+        if (icon) {
+
+            if (navbar.classList.contains("mobile-open")) {
+
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+
+            } else {
+
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+
+            }
 
         }
 
     });
 
-    navLinks.forEach(link => {
+}
+
+
+// ======================================================
+// CLOSE MOBILE MENU AFTER CLICK
+// ======================================================
+
+navLinks.forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        if (navbar) {
+
+            navbar.classList.remove("mobile-open");
+
+        }
+
+        if (menuBtn) {
+
+            const icon = menuBtn.querySelector("i");
+
+            if (icon) {
+
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+
+            }
+
+        }
+
+    });
+
+});
+
+
+// ======================================================
+// SMOOTH SCROLLING
+// ======================================================
+
+document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+
+    link.addEventListener("click", function(e) {
+
+        const targetId = this.getAttribute("href");
+
+        if (!targetId || targetId === "#") {
+            return;
+        }
+
+        const target = document.querySelector(targetId);
+
+        if (target) {
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    });
+
+});
+
+
+// ======================================================
+// STICKY HEADER
+// ======================================================
+
+const header = document.getElementById("header");
+
+
+function updateHeader() {
+
+    if (!header) {
+        return;
+    }
+
+    if (window.scrollY > 50) {
+
+        header.classList.add("scrolled");
+
+    } else {
+
+        header.classList.remove("scrolled");
+
+    }
+
+}
+
+
+window.addEventListener("scroll", updateHeader);
+
+updateHeader();
+
+
+// ======================================================
+// ACTIVE NAVIGATION
+// ======================================================
+
+const sections = document.querySelectorAll("section[id]");
+
+
+function updateActiveNavigation() {
+
+    let currentSection = "";
+
+    sections.forEach(function(section) {
+
+        const sectionTop = section.offsetTop - 180;
+        const sectionBottom =
+            sectionTop + section.offsetHeight;
+
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionBottom
+        ) {
+
+            currentSection =
+                section.getAttribute("id");
+
+        }
+
+    });
+
+
+    navLinks.forEach(function(link) {
 
         link.classList.remove("active");
 
-        if (link.getAttribute("href") === "#" + current) {
+        const href = link.getAttribute("href");
+
+        if (href === "#" + currentSection) {
 
             link.classList.add("active");
 
@@ -85,42 +201,69 @@ window.addEventListener("scroll", () => {
 
     });
 
-});
+}
 
 
-// ===============================
-// Typing Effect
-// ===============================
+window.addEventListener(
+    "scroll",
+    updateActiveNavigation
+);
+
+updateActiveNavigation();
+
+
+// ======================================================
+// TYPING EFFECT
+// ======================================================
 
 const typing = document.getElementById("typing");
+
 
 if (typing) {
 
     const words = [
-        "Front-End Developer",
-        "Responsive Website Expert",
-        "Freelancer"
+
+        "Full Stack Developer",
+        "Frontend Developer",
+        "MERN Learner",
+        "Web Developer"
+
     ];
+
 
     let wordIndex = 0;
     let charIndex = 0;
     let deleting = false;
 
-    function type() {
 
-        const currentWord = words[wordIndex];
+    function typeEffect() {
+
+        const currentWord =
+            words[wordIndex];
+
 
         if (!deleting) {
 
-            typing.textContent = currentWord.substring(0, charIndex);
+            typing.textContent =
+                currentWord.substring(
+                    0,
+                    charIndex
+                );
 
             charIndex++;
 
-            if (charIndex > currentWord.length) {
+
+            if (
+                charIndex >
+                currentWord.length
+            ) {
 
                 deleting = true;
 
-                setTimeout(type, 1500);
+                setTimeout(
+                    typeEffect,
+                    1400
+                );
 
                 return;
 
@@ -128,17 +271,28 @@ if (typing) {
 
         } else {
 
-            typing.textContent = currentWord.substring(0, charIndex);
+            typing.textContent =
+                currentWord.substring(
+                    0,
+                    charIndex
+                );
 
             charIndex--;
 
+
             if (charIndex < 0) {
+
+                charIndex = 0;
 
                 deleting = false;
 
                 wordIndex++;
 
-                if (wordIndex >= words.length) {
+
+                if (
+                    wordIndex >=
+                    words.length
+                ) {
 
                     wordIndex = 0;
 
@@ -148,56 +302,91 @@ if (typing) {
 
         }
 
-        setTimeout(type, deleting ? 50 : 100);
+
+        setTimeout(
+            typeEffect,
+            deleting ? 50 : 90
+        );
 
     }
 
-    type();
+
+    typeEffect();
 
 }
 
 
-// ===============================
-// Scroll Reveal
-// ===============================
+// ======================================================
+// SCROLL REVEAL
+// ======================================================
 
-const observer = new IntersectionObserver((entries) => {
+const revealElements =
+    document.querySelectorAll(".reveal");
 
-    entries.forEach(entry => {
 
-        if (entry.isIntersecting) {
+if ("IntersectionObserver" in window) {
 
-            entry.target.classList.add("show");
+    const revealObserver =
+        new IntersectionObserver(
+            function(entries, observer) {
 
-        }
+                entries.forEach(function(entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "show"
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            }, {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach(function(element) {
+
+        revealObserver.observe(element);
 
     });
 
-}, {
-    threshold: 0.2
-});
+} else {
+
+    revealElements.forEach(function(element) {
+
+        element.classList.add("show");
+
+    });
+
+}
 
 
-document.querySelectorAll("section").forEach(section => {
+// ======================================================
+// SCROLL TO TOP BUTTON
+// ======================================================
 
-    observer.observe(section);
+const topBtn =
+    document.getElementById("topBtn");
 
-});
+
+function updateTopButton() {
+
+    if (!topBtn) {
+        return;
+    }
 
 
-// ===============================
-// Scroll To Top Button
-// ===============================
+    if (window.scrollY > 500) {
 
-const topBtn = document.getElementById("topBtn");
-
-window.addEventListener("scroll", () => {
-
-    if (!topBtn) return;
-
-    if (window.scrollY > 300) {
-
-        topBtn.style.display = "block";
+        topBtn.style.display = "grid";
 
     } else {
 
@@ -205,236 +394,467 @@ window.addEventListener("scroll", () => {
 
     }
 
-});
+}
+
+
+window.addEventListener(
+    "scroll",
+    updateTopButton
+);
+
+updateTopButton();
 
 
 if (topBtn) {
 
-    topBtn.addEventListener("click", () => {
+    topBtn.addEventListener(
+        "click",
+        function() {
 
-        window.scrollTo({
+            window.scrollTo({
 
-            top: 0,
-            behavior: "smooth"
+                top: 0,
 
-        });
+                behavior: "smooth"
 
-    });
+            });
+
+        }
+    );
 
 }
 
 
-// ===============================
-// EmailJS Contact Form
-// ===============================
+// ======================================================
+// EMAILJS INITIALIZATION
+// ======================================================
 
-// Initialize EmailJS
 if (typeof emailjs !== "undefined") {
 
     emailjs.init({
-        publicKey: "S-w9rL9Znw5GWPGC8"
+
+        publicKey: "Zz105-2jjpMKA2dSv"
+
     });
+
+    console.log(
+        "✅ EmailJS initialized successfully"
+    );
 
 } else {
 
-    console.error("EmailJS library is not loaded.");
+    console.error(
+        "❌ EmailJS library is not loaded"
+    );
 
 }
 
 
-// Get Contact Form
-const form = document.getElementById("contact-form");
-const status = document.getElementById("status");
+// ======================================================
+// CONTACT FORM
+// ======================================================
+
+const form =
+    document.getElementById(
+        "contact-form"
+    );
+
+const status =
+    document.getElementById(
+        "status"
+    );
 
 
 if (form) {
 
-    form.addEventListener("submit", function(e) {
+    form.addEventListener(
+        "submit",
+        async function(e) {
 
-        e.preventDefault();
-
-
-        // Get input fields
-        const nameInput = document.getElementById("name");
-        const emailInput = document.getElementById("email");
-        const messageInput = document.getElementById("message");
+            e.preventDefault();
 
 
-        // Check fields exist
-        if (!nameInput || !emailInput || !messageInput) {
+            // --------------------------------------------------
+            // INPUT FIELDS
+            // --------------------------------------------------
 
-            console.error("Contact form fields are missing.");
+            const nameInput =
+                document.getElementById("name");
 
-            if (status) {
-                status.innerHTML = "❌ Form configuration error.";
-            }
+            const emailInput =
+                document.getElementById("email");
 
-            return;
-
-        }
-
-
-        // Get values
-        const name = nameInput.value.trim();
-        const email = emailInput.value.trim();
-        const message = messageInput.value.trim();
+            const messageInput =
+                document.getElementById("message");
 
 
-        // ===============================
-        // Validation
-        // ===============================
+            // --------------------------------------------------
+            // CHECK INPUTS
+            // --------------------------------------------------
 
-        if (name === "" || email === "" || message === "") {
+            if (!nameInput ||
+                !emailInput ||
+                !messageInput
+            ) {
 
-            if (status) {
-                status.innerHTML = "⚠️ Please fill in all fields.";
-            }
-
-            return;
-
-        }
-
-
-        // Email validation
-        const emailPattern =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                console.error(
+                    "❌ Contact form fields are missing."
+                );
 
 
-        if (!emailPattern.test(email)) {
+                if (status) {
 
-            if (status) {
-                status.innerHTML = "⚠️ Please enter a valid email address.";
-            }
+                    status.textContent =
+                        "❌ Form configuration error.";
 
-            return;
+                }
 
-        }
-
-
-        // ===============================
-        // Show Sending Message
-        // ===============================
-
-        if (status) {
-
-            status.innerHTML = "📨 Sending message...";
-
-        }
-
-
-        // Disable submit button
-        const submitButton = form.querySelector(
-            'button[type="submit"], input[type="submit"]'
-        );
-
-        if (submitButton) {
-
-            submitButton.disabled = true;
-
-        }
-
-
-        // ===============================
-        // Send Email Using EmailJS
-        // ===============================
-
-        emailjs.send(
-            "service_okwt0t6",
-            "template_h2mxtes", {
-                name: name,
-                email: email,
-                message: message
-            }
-        )
-
-        .then(function(response) {
-
-            console.log(
-                "EmailJS SUCCESS:",
-                response.status,
-                response.text
-            );
-
-
-            if (status) {
-
-                status.innerHTML =
-                    "✅ Message sent successfully!";
+                return;
 
             }
 
 
-            // Clear form
-            form.reset();
+            // --------------------------------------------------
+            // VALUES
+            // --------------------------------------------------
+
+            const name =
+                nameInput.value.trim();
+
+            const email =
+                emailInput.value.trim();
+
+            const message =
+                messageInput.value.trim();
 
 
-            // Remove validation borders
-            const inputs =
-                form.querySelectorAll("input, textarea");
+            // --------------------------------------------------
+            // EMPTY FIELD VALIDATION
+            // --------------------------------------------------
 
-            inputs.forEach(input => {
+            if (
+                name === "" ||
+                email === "" ||
+                message === ""
+            ) {
 
-                input.style.border = "";
+                if (status) {
 
-            });
+                    status.textContent =
+                        "⚠️ Please fill in all fields.";
+
+                }
+
+                return;
+
+            }
 
 
-        })
+            // --------------------------------------------------
+            // EMAIL VALIDATION
+            // --------------------------------------------------
 
-        .catch(function(error) {
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            console.error("EmailJS ERROR:", error);
 
+            if (!emailPattern.test(email)) {
+
+                if (status) {
+
+                    status.textContent =
+                        "⚠️ Please enter a valid email address.";
+
+                }
+
+                return;
+
+            }
+
+
+            // --------------------------------------------------
+            // CHECK EMAILJS
+            // --------------------------------------------------
+
+            if (
+                typeof emailjs === "undefined"
+            ) {
+
+                if (status) {
+
+                    status.textContent =
+                        "❌ EmailJS is not loaded.";
+
+                }
+
+                console.error(
+                    "EmailJS library is missing."
+                );
+
+                return;
+
+            }
+
+
+            // --------------------------------------------------
+            // SHOW SENDING
+            // --------------------------------------------------
 
             if (status) {
 
-                status.innerHTML =
-                    "❌ Failed to send message. Please try again.";
+                status.textContent =
+                    "📨 Sending message...";
 
             }
 
-        })
 
-        .finally(function() {
+            // --------------------------------------------------
+            // SUBMIT BUTTON
+            // --------------------------------------------------
 
-            // Enable button again
+            const submitButton =
+                form.querySelector(
+                    'button[type="submit"], input[type="submit"]'
+                );
+
+
+            const originalButtonHTML =
+                submitButton ?
+                submitButton.innerHTML :
+                "";
+
+
             if (submitButton) {
 
-                submitButton.disabled = false;
+                submitButton.disabled = true;
+
+                submitButton.innerHTML =
+                    `
+                    Sending...
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                    `;
 
             }
 
-        });
 
-    });
+            // --------------------------------------------------
+            // EMAILJS SEND
+            // --------------------------------------------------
+
+            try {
+
+                const response =
+                    await emailjs.send(
+
+                        "service_okwt0t6",
+
+                        "template_h2mxtes",
+
+                        {
+
+                            name: name,
+
+                            email: email,
+
+                            message: message
+
+                        }
+
+                    );
+
+
+                // --------------------------------------------------
+                // SUCCESS
+                // --------------------------------------------------
+
+                console.log(
+                    "✅ EmailJS SUCCESS:",
+                    response.status,
+                    response.text
+                );
+
+
+                if (status) {
+
+                    status.textContent =
+                        "✅ Message sent successfully!";
+
+                }
+
+
+                form.reset();
+
+
+            } catch (error) {
+
+                // --------------------------------------------------
+                // ERROR
+                // --------------------------------------------------
+
+                console.error(
+                    "❌ EmailJS ERROR:",
+                    error
+                );
+
+
+                if (status) {
+
+                    if (
+                        error &&
+                        error.status === 412
+                    ) {
+
+                        status.textContent =
+                            "❌ Gmail connection expired. Reconnect Gmail in EmailJS.";
+
+                    } else if (
+                        error &&
+                        error.status === 404
+                    ) {
+
+                        status.textContent =
+                            "❌ EmailJS Service/Template not found. Check your IDs.";
+
+                    } else {
+
+                        status.textContent =
+                            "❌ Failed to send message. Please try again.";
+
+                    }
+
+                }
+
+            } finally {
+
+                // --------------------------------------------------
+                // ENABLE BUTTON
+                // --------------------------------------------------
+
+                if (submitButton) {
+
+                    submitButton.disabled = false;
+
+                    submitButton.innerHTML =
+                        originalButtonHTML ||
+                        `
+                        Send Message
+                        <i class="fa-solid fa-arrow-right"></i>
+                        `;
+
+                }
+
+            }
+
+        }
+    );
 
 }
 
 
-// ===============================
-// Hero Image Floating Animation
-// ===============================
+// ======================================================
+// HERO IMAGE FLOATING ANIMATION
+// ======================================================
 
-const heroImage = document.querySelector(".hero-image img");
+const heroImage =
+    document.querySelector(
+        ".hero-image img"
+    );
+
 
 if (heroImage) {
 
     let position = 0;
 
-    setInterval(() => {
 
-        position = position === 0 ? 15 : 0;
+    setInterval(
+        function() {
 
-        heroImage.style.transform =
-            `translateY(${position}px)`;
+            position =
+                position === 0 ?
+                12 :
+                0;
 
-    }, 2000);
+
+            heroImage.style.transform =
+                `translateY(${position}px)`;
+
+
+        },
+        2000
+    );
 
 }
 
 
-// ===============================
-// Console Message
-// ===============================
+// ======================================================
+// CURRENT YEAR
+// ======================================================
 
-console.log("Portfolio JavaScript loaded successfully.");
+const yearElement =
+    document.getElementById("year");
+
+
+if (yearElement) {
+
+    yearElement.textContent =
+        new Date().getFullYear();
+
+}
+
+
+// ======================================================
+// ESC KEY - CLOSE MOBILE MENU
+// ======================================================
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape" &&
+            navbar
+        ) {
+
+            navbar.classList.remove(
+                "mobile-open"
+            );
+
+
+            if (menuBtn) {
+
+                const icon =
+                    menuBtn.querySelector("i");
+
+
+                if (icon) {
+
+                    icon.classList.remove(
+                        "fa-xmark"
+                    );
+
+                    icon.classList.add(
+                        "fa-bars"
+                    );
+
+                }
+
+            }
+
+        }
+
+    }
+);
+
+
+// ======================================================
+// CONSOLE MESSAGE
+// ======================================================
+
+console.log(
+    "%c Mansi Maurya Portfolio 🚀 ",
+    "color:#a78bfa;font-size:18px;font-weight:bold;"
+);
+
+console.log(
+    "Portfolio JavaScript loaded successfully."
+);
