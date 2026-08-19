@@ -171,6 +171,7 @@ function updateActiveNavigation() {
     sections.forEach(function(section) {
 
         const sectionTop = section.offsetTop - 180;
+
         const sectionBottom =
             sectionTop + section.offsetHeight;
 
@@ -232,7 +233,9 @@ if (typing) {
 
 
     let wordIndex = 0;
+
     let charIndex = 0;
+
     let deleting = false;
 
 
@@ -746,41 +749,6 @@ if (form) {
             }
 
         }
-    );
-
-}
-
-
-// ======================================================
-// HERO IMAGE FLOATING ANIMATION
-// ======================================================
-
-const heroImage =
-    document.querySelector(
-        ".hero-image img"
-    );
-
-
-if (heroImage) {
-
-    let position = 0;
-
-
-    setInterval(
-        function() {
-
-            position =
-                position === 0 ?
-                12 :
-                0;
-
-
-            heroImage.style.transform =
-                `translateY(${position}px)`;
-
-
-        },
-        2000
     );
 
 }

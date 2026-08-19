@@ -5,22 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Mansi Maurya - Full Stack Developer, BCA Student and Web Developer. Explore my projects, skills and services.">
-
-    <meta name="keywords" content="Mansi Maurya, Full Stack Developer, Web Developer, React Developer, MERN Developer, Portfolio">
-
-    <meta name="author" content="Mansi Maurya">
-
     <title>Mansi Maurya | Full Stack Developer</title>
+
+    <meta name="description" content="Mansi Maurya - BCA student and aspiring Full Stack Developer specializing in web development and MERN stack.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -31,36 +27,41 @@
 
 <body>
 
-    <!-- ================= PRELOADER ================= -->
+    <!-- =========================================
+         BACKGROUND
+    ========================================== -->
+
+    <div class="background-grid"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+
+    <!-- =========================================
+         PRELOADER
+    ========================================== -->
 
     <div id="preloader">
 
         <div class="loader-box">
 
             <div class="loader-logo">
-                M<span>.</span>
+                Mansi<span>.</span>
             </div>
 
             <div class="loader-line">
                 <span></span>
             </div>
 
-            <p>Initializing portfolio...</p>
+            <p>LOADING PORTFOLIO...</p>
 
         </div>
 
     </div>
 
 
-    <!-- ================= BACKGROUND ================= -->
-
-    <div class="background-grid"></div>
-
-    <div class="glow glow-one"></div>
-    <div class="glow glow-two"></div>
-
-
-    <!-- ================= HEADER ================= -->
+    <!-- =========================================
+         HEADER
+    ========================================== -->
 
     <header id="header">
 
@@ -72,21 +73,44 @@
 
             <nav id="navbar">
 
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#home" class="nav-link active">
+                    Home
+                </a>
+
+                <a href="#about" class="nav-link">
+                    About
+                </a>
+
+                <a href="#skills" class="nav-link">
+                    Skills
+                </a>
+
+                <a href="#services" class="nav-link">
+                    Services
+                </a>
+
+                <a href="#projects" class="nav-link">
+                    Projects
+                </a>
+
+                <a href="#contact" class="nav-link">
+                    Contact
+                </a>
 
             </nav>
 
-            <a href="#contact" class="nav-btn">
-                Let's Talk <i class="fa-solid fa-arrow-right"></i>
+
+            <a href="resume/mansi_resume.pdf" target="_blank" class="nav-btn">
+
+                <i class="fa-solid fa-file-lines"></i> View Resume
+
             </a>
 
-            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+
+            <button class="menu-btn" id="menuBtn" aria-label="Open Menu">
+
                 <i class="fa-solid fa-bars"></i>
+
             </button>
 
         </div>
@@ -94,65 +118,98 @@
     </header>
 
 
-    <!-- ================= HERO ================= -->
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
 
     <main>
 
-        <section id="home" class="hero section">
+        <section class="hero" id="home">
 
             <div class="container hero-container">
+
+
+                <!-- HERO CONTENT -->
 
                 <div class="hero-content reveal">
 
                     <div class="status-pill">
-                        <span class="status-dot"></span> Available for freelance projects
+
+                        <span class="status-dot"></span> Available for Opportunities
+
                     </div>
+
 
                     <p class="hero-small">
                         HELLO, I'M
                     </p>
 
+
                     <h1>
                         Mansi
-                        <span>Maurya.</span>
+                        <span>Maurya</span>
                     </h1>
 
+
                     <h2>
-                        <span id="typing">Full Stack Developer</span>
+                        <span id="typing"></span>
                         <span class="cursor">|</span>
                     </h2>
 
+
                     <p class="hero-description">
-                        I build modern, responsive and user-focused web experiences with clean code and thoughtful design. Currently growing as a Full Stack Developer and MERN learner.
+
+                        BCA student and aspiring Full Stack Developer passionate about creating modern, responsive and user-friendly web applications.
+
                     </p>
+
 
                     <div class="hero-buttons">
 
                         <a href="#projects" class="btn primary-btn">
+
                             View My Work
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <i class="fa-solid fa-arrow-right"></i>
+
                         </a>
 
-                        <a href="#contact" class="btn secondary-btn">
-                            Contact Me
-                            <i class="fa-regular fa-paper-plane"></i>
+
+                        <a href="resume/mansi_resume.pdf" target="_blank" class="btn secondary-btn">
+
+                            <i class="fa-solid fa-file-lines"></i> View Resume
+
                         </a>
 
                     </div>
 
+
                     <div class="hero-socials">
 
-                        <a href="https://github.com/mansimaurya721-ux" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <a href="https://github.com/mansimaurya721-ux" target="_blank" aria-label="GitHub">
+
                             <i class="fa-brands fa-github"></i>
+
                         </a>
 
-                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+
+                        <a href="https://www.linkedin.com/in/mansi-maurya1710-/" target="_blank" aria-label="LinkedIn">
+
                             <i class="fa-brands fa-linkedin-in"></i>
+
+                        </a>
+
+
+                        <a href="mailto:your-email@example.com" aria-label="Email">
+
+                            <i class="fa-solid fa-envelope"></i>
+
                         </a>
 
                     </div>
 
                 </div>
+
 
 
                 <!-- HERO VISUAL -->
@@ -163,6 +220,7 @@
                     <div class="orbit orbit-two"></div>
                     <div class="orbit orbit-three"></div>
 
+
                     <div class="hero-card">
 
                         <div class="terminal-top">
@@ -171,18 +229,18 @@
                             <span></span>
                             <span></span>
 
-                            <small>mansi.dev</small>
+                            <small>
+                                developer.js
+                            </small>
 
                         </div>
+
 
                         <div class="code-content">
 
                             <p>
                                 <span class="purple">const</span> developer =
-                            </p>
-
-                            <p class="indent">
-                                {
+                                <span class="yellow">{</span>
                             </p>
 
                             <p class="indent">
@@ -200,71 +258,100 @@
                             </p>
 
                             <p class="indent">
-                                stack:
+                                skills:
                                 <span class="green">
-                                    "MERN"
+                                    ["Java", "React", "Node.js", "MongoDB"]
                                 </span>,
                             </p>
 
                             <p class="indent">
-                                passion:
+                                learning:
                                 <span class="green">
-                                    "Building"
+                                    "MERN Stack"
+                                </span>,
+                            </p>
+
+                            <p class="indent">
+                                status:
+                                <span class="green">
+                                    "Building..."
                                 </span>
                             </p>
 
                             <p>
-                                };
+                                <span class="yellow">}</span>;
                             </p>
 
+
                             <p class="code-comment">
-                                // turning ideas into interfaces ✨
+                                // Turning ideas into // functional applications 🚀
                             </p>
 
                         </div>
 
                     </div>
 
+
                     <div class="floating-card card-one">
-                        <i class="fa-solid fa-code"></i>
-                        <span>Clean Code</span>
+
+                        <i class="fa-brands fa-react"></i> React.js
+
                     </div>
+
 
                     <div class="floating-card card-two">
-                        <i class="fa-solid fa-mobile-screen"></i>
-                        <span>Responsive</span>
+
+                        <i class="fa-brands fa-node-js"></i> Node.js
+
                     </div>
 
+
                     <div class="floating-card card-three">
-                        <i class="fa-solid fa-bolt"></i>
-                        <span>Fast UI</span>
+
+                        <i class="fa-solid fa-database"></i> MongoDB
+
                     </div>
 
                 </div>
 
             </div>
 
+
             <div class="scroll-indicator">
-                <span>Scroll to explore</span>
-                <i class="fa-solid fa-arrow-down"></i>
+
+                <i class="fa-solid fa-arrow-down"></i> SCROLL TO EXPLORE
+
             </div>
 
         </section>
 
 
-        <!-- ================= ABOUT ================= -->
 
-        <section id="about" class="section">
+        <!-- =========================================
+             ABOUT
+        ========================================== -->
+
+        <section class="section dark-section" id="about">
 
             <div class="container">
 
                 <div class="section-heading reveal">
 
-                    <span class="section-number">01</span>
+                    <span class="section-number">
+                        01
+                    </span>
 
                     <div>
-                        <p class="section-label">GET TO KNOW ME</p>
-                        <h2>About <span>Me</span></h2>
+
+                        <p class="section-label">
+                            ABOUT ME
+                        </p>
+
+                        <h2>
+                            Building with
+                            <span>purpose.</span>
+                        </h2>
+
                     </div>
 
                 </div>
@@ -272,35 +359,64 @@
 
                 <div class="about-grid">
 
+
                     <div class="about-text reveal">
 
                         <p class="lead">
-                            I'm <strong>Mansi Maurya</strong>, a BCA student and aspiring Full Stack Developer passionate about creating useful and engaging web experiences.
+
+                            I'm a BCA student who enjoys turning ideas into practical and interactive web experiences.
+
                         </p>
 
-                        <p>
-                            I enjoy transforming ideas into responsive websites and applications using modern web technologies. My learning journey currently focuses on frontend development, JavaScript and the MERN stack.
-                        </p>
 
                         <p>
-                            I believe good development is a combination of clean code, thoughtful UI and continuous learning. I'm always looking for opportunities to improve my skills by building real-world projects.
+
+                            I am currently learning and building projects using modern web technologies. My interests include frontend development, backend development, databases and full-stack application development.
+
                         </p>
+
+
+                        <p>
+
+                            I enjoy working with
+                            <strong>JavaScript, React, Node.js,
+                            Express and MongoDB</strong> while continuously improving my programming and problem-solving skills.
+
+                        </p>
+
 
                         <div class="about-stats">
 
                             <div class="stat">
+
                                 <strong>10+</strong>
-                                <span>Projects</span>
+
+                                <span>
+                                    Projects
+                                </span>
+
                             </div>
 
-                            <div class="stat">
-                                <strong>8+</strong>
-                                <span>Technologies</span>
-                            </div>
 
                             <div class="stat">
+
+                                <strong>5+</strong>
+
+                                <span>
+                                    Technologies
+                                </span>
+
+                            </div>
+
+
+                            <div class="stat">
+
                                 <strong>2027</strong>
-                                <span>Graduation</span>
+
+                                <span>
+                                    Graduation
+                                </span>
+
                             </div>
 
                         </div>
@@ -308,67 +424,78 @@
                     </div>
 
 
-                    <div class="about-terminal reveal">
 
-                        <div class="terminal-window">
+                    <div class="terminal-window reveal">
 
-                            <div class="terminal-header">
+                        <div class="terminal-header">
 
-                                <div class="terminal-dots">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
+                            <div class="terminal-dots">
 
-                                <span>about-me.js</span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
 
                             </div>
 
-                            <div class="terminal-body">
+                            <span>
+                                about-me.txt
+                            </span>
 
-                                <p>
-                                    <span class="purple">class</span>
-                                    <span class="yellow">Developer</span> {
-                                </p>
+                        </div>
 
-                                <p class="indent">
-                                    name =
-                                    <span class="green">
-                                        "Mansi Maurya";
-                                    </span>
-                                </p>
 
-                                <p class="indent">
-                                    education =
-                                    <span class="green">
-                                        "BCA";
-                                    </span>
-                                </p>
+                        <div class="terminal-body">
 
-                                <p class="indent">
-                                    focus =
-                                    <span class="green">
-                                        "Full Stack Development";
-                                    </span>
-                                </p>
+                            <p>
+                                <span class="purple">></span> whoami
+                            </p>
 
-                                <p class="indent">
-                                    learning =
-                                    <span class="green">
-                                        "MERN Stack";
-                                    </span>
-                                </p>
+                            <p class="indent">
+                                Mansi Maurya
+                            </p>
 
-                                <p class="indent">
-                                    mindset =
-                                    <span class="green">
-                                        "Keep Building";
-                                    </span>
-                                </p>
 
-                                <p>}</p>
+                            <p>
+                                <span class="purple">></span> education
+                            </p>
 
-                            </div>
+                            <p class="indent">
+                                BCA Student
+                            </p>
+
+
+                            <p>
+                                <span class="purple">></span> focus
+                            </p>
+
+                            <p class="indent">
+                                Full Stack Development
+                            </p>
+
+
+                            <p>
+                                <span class="purple">></span> stack
+                            </p>
+
+                            <p class="indent">
+                                Java • React • Node • MongoDB
+                            </p>
+
+
+                            <p>
+                                <span class="purple">></span> currently_building
+                            </p>
+
+                            <p class="indent">
+                                Shiyora LMS
+                            </p>
+
+
+                            <p>
+                                <span class="green">
+                                    >
+                                </span> Let's build something great!
+                            </p>
 
                         </div>
 
@@ -381,104 +508,227 @@
         </section>
 
 
-        <!-- ================= SKILLS ================= -->
 
-        <section id="skills" class="section dark-section">
+        <!-- =========================================
+             SKILLS
+        ========================================== -->
+
+        <section class="section" id="skills">
 
             <div class="container">
 
                 <div class="section-heading reveal">
 
-                    <span class="section-number">02</span>
+                    <span class="section-number">
+                        02
+                    </span>
 
                     <div>
-                        <p class="section-label">MY TOOLKIT</p>
-                        <h2>Skills & <span>Technologies</span></h2>
+
+                        <p class="section-label">
+                            MY SKILLS
+                        </p>
+
+                        <h2>
+                            Technologies I
+                            <span>work with.</span>
+                        </h2>
+
                     </div>
 
                 </div>
 
 
-                <div class="skills-grid reveal">
+                <div class="skills-grid">
 
-                    <div class="skill-card">
-                        <div class="skill-icon html">
-                            <i class="fa-brands fa-html5"></i>
-                        </div>
-                        <h3>HTML5</h3>
-                        <p>Semantic & accessible markup</p>
-                    </div>
 
-                    <div class="skill-card">
-                        <div class="skill-icon css">
-                            <i class="fa-brands fa-css3-alt"></i>
-                        </div>
-                        <h3>CSS3</h3>
-                        <p>Responsive modern layouts</p>
-                    </div>
+                    <div class="skill-card reveal">
 
-                    <div class="skill-card">
-                        <div class="skill-icon js">
-                            <i class="fa-brands fa-js"></i>
-                        </div>
-                        <h3>JavaScript</h3>
-                        <p>Interactive web experiences</p>
-                    </div>
+                        <div class="skill-icon">
 
-                    <div class="skill-card">
-                        <div class="skill-icon react">
-                            <i class="fa-brands fa-react"></i>
-                        </div>
-                        <h3>React</h3>
-                        <p>Component-based interfaces</p>
-                    </div>
-
-                    <div class="skill-card">
-                        <div class="skill-icon node">
-                            <i class="fa-brands fa-node-js"></i>
-                        </div>
-                        <h3>Node.js</h3>
-                        <p>Backend development</p>
-                    </div>
-
-                    <div class="skill-card">
-                        <div class="skill-icon database">
-                            <i class="fa-solid fa-database"></i>
-                        </div>
-                        <h3>MongoDB</h3>
-                        <p>Database management</p>
-                    </div>
-
-                    <div class="skill-card">
-                        <div class="skill-icon java">
                             <i class="fa-brands fa-java"></i>
+
                         </div>
-                        <h3>Java</h3>
-                        <p>OOP & application development</p>
+
+                        <h3>
+                            Java
+                        </h3>
+
+                        <p>
+                            Programming & OOP
+                        </p>
+
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-icon python">
-                            <i class="fa-brands fa-python"></i>
+
+                    <div class="skill-card reveal">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-brands fa-html5"></i>
+
                         </div>
-                        <h3>Python</h3>
-                        <p>Programming & automation</p>
+
+                        <h3>
+                            HTML5
+                        </h3>
+
+                        <p>
+                            Semantic Web
+                        </p>
+
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-icon git">
+
+                    <div class="skill-card reveal">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-brands fa-css3-alt"></i>
+
+                        </div>
+
+                        <h3>
+                            CSS3
+                        </h3>
+
+                        <p>
+                            Responsive UI
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-brands fa-js"></i>
+
+                        </div>
+
+                        <h3>
+                            JavaScript
+                        </h3>
+
+                        <p>
+                            Dynamic Web Apps
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-brands fa-react"></i>
+
+                        </div>
+
+                        <h3>
+                            React.js
+                        </h3>
+
+                        <p>
+                            Frontend Development
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-brands fa-node-js"></i>
+
+                        </div>
+
+                        <h3>
+                            Node.js
+                        </h3>
+
+                        <p>
+                            Backend Development
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-solid fa-server"></i>
+
+                        </div>
+
+                        <h3>
+                            Express.js
+                        </h3>
+
+                        <p>
+                            REST APIs
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-solid fa-database"></i>
+
+                        </div>
+
+                        <h3>
+                            MongoDB
+                        </h3>
+
+                        <p>
+                            NoSQL Database
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-solid fa-database"></i>
+
+                        </div>
+
+                        <h3>
+                            SQL
+                        </h3>
+
+                        <p>
+                            Relational Database
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <div class="skill-icon">
+
                             <i class="fa-brands fa-git-alt"></i>
-                        </div>
-                        <h3>Git & GitHub</h3>
-                        <p>Version control</p>
-                    </div>
 
-                    <div class="skill-card">
-                        <div class="skill-icon sql">
-                            <i class="fa-solid fa-table"></i>
                         </div>
-                        <h3>SQL / MySQL</h3>
-                        <p>Relational databases</p>
+
+                        <h3>
+                            Git
+                        </h3>
+
+                        <p>
+                            Version Control
+                        </p>
+
                     </div>
 
                 </div>
@@ -488,19 +738,32 @@
         </section>
 
 
-        <!-- ================= SERVICES ================= -->
 
-        <section id="services" class="section">
+        <!-- =========================================
+             SERVICES
+        ========================================== -->
+
+        <section class="section dark-section" id="services">
 
             <div class="container">
 
                 <div class="section-heading reveal">
 
-                    <span class="section-number">03</span>
+                    <span class="section-number">
+                        03
+                    </span>
 
                     <div>
-                        <p class="section-label">WHAT I CAN DO</p>
-                        <h2>My <span>Services</span></h2>
+
+                        <p class="section-label">
+                            WHAT I DO
+                        </p>
+
+                        <h2>
+                            Turning ideas into
+                            <span>solutions.</span>
+                        </h2>
+
                     </div>
 
                 </div>
@@ -508,88 +771,105 @@
 
                 <div class="services-grid">
 
-                    <article class="service-card reveal">
 
-                        <div class="service-number">01</div>
+                    <div class="service-card reveal">
 
-                        <div class="service-icon">
-                            <i class="fa-solid fa-laptop-code"></i>
-                        </div>
-
-                        <h3>Responsive Websites</h3>
-
-                        <p>
-                            Modern websites that look great and work smoothly across desktop, tablet and mobile devices.
-                        </p>
-
-                        <span class="service-arrow">
-                            <i class="fa-solid fa-arrow-right"></i>
+                        <span class="service-number">
+                            01
                         </span>
 
-                    </article>
+                        <div class="service-icon">
+
+                            <i class="fa-solid fa-code"></i>
+
+                        </div>
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+                        <p>
+                            Building responsive and functional websites using modern HTML, CSS and JavaScript technologies.
+                        </p>
+
+                        <i class="fa-solid fa-arrow-right service-arrow"></i>
+
+                    </div>
 
 
-                    <article class="service-card reveal">
+                    <div class="service-card reveal">
 
-                        <div class="service-number">02</div>
+                        <span class="service-number">
+                            02
+                        </span>
 
                         <div class="service-icon">
+
+                            <i class="fa-brands fa-react"></i>
+
+                        </div>
+
+                        <h3>
+                            Frontend Development
+                        </h3>
+
+                        <p>
+                            Creating clean and interactive user interfaces using React.js and responsive design principles.
+                        </p>
+
+                        <i class="fa-solid fa-arrow-right service-arrow"></i>
+
+                    </div>
+
+
+                    <div class="service-card reveal">
+
+                        <span class="service-number">
+                            03
+                        </span>
+
+                        <div class="service-icon">
+
+                            <i class="fa-solid fa-server"></i>
+
+                        </div>
+
+                        <h3>
+                            Backend Development
+                        </h3>
+
+                        <p>
+                            Developing APIs and server-side applications using Node.js and Express.js.
+                        </p>
+
+                        <i class="fa-solid fa-arrow-right service-arrow"></i>
+
+                    </div>
+
+
+                    <div class="service-card reveal">
+
+                        <span class="service-number">
+                            04
+                        </span>
+
+                        <div class="service-icon">
+
                             <i class="fa-solid fa-layer-group"></i>
+
                         </div>
 
-                        <h3>Landing Pages</h3>
+                        <h3>
+                            Full Stack Projects
+                        </h3>
 
                         <p>
-                            Clean and engaging landing pages designed to communicate your product or service clearly.
+                            Combining frontend, backend and databases to create complete web applications.
                         </p>
 
-                        <span class="service-arrow">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
+                        <i class="fa-solid fa-arrow-right service-arrow"></i>
 
-                    </article>
-
-
-                    <article class="service-card reveal">
-
-                        <div class="service-number">03</div>
-
-                        <div class="service-icon">
-                            <i class="fa-solid fa-palette"></i>
-                        </div>
-
-                        <h3>Website Redesign</h3>
-
-                        <p>
-                            Give an outdated website a modern visual style, better layout and improved user experience.
-                        </p>
-
-                        <span class="service-arrow">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-
-                    </article>
-
-
-                    <article class="service-card reveal">
-
-                        <div class="service-number">04</div>
-
-                        <div class="service-icon">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-                        </div>
-
-                        <h3>Frontend Bug Fixing</h3>
-
-                        <p>
-                            Fix HTML, CSS and JavaScript issues and improve the functionality of existing websites.
-                        </p>
-
-                        <span class="service-arrow">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-
-                    </article>
+                    </div>
 
                 </div>
 
@@ -598,19 +878,32 @@
         </section>
 
 
-        <!-- ================= PROJECTS ================= -->
 
-        <section id="projects" class="section dark-section">
+        <!-- =========================================
+             PROJECTS
+        ========================================== -->
+
+        <section class="section" id="projects">
 
             <div class="container">
 
                 <div class="section-heading reveal">
 
-                    <span class="section-number">04</span>
+                    <span class="section-number">
+                        04
+                    </span>
 
                     <div>
-                        <p class="section-label">SELECTED WORK</p>
-                        <h2>Featured <span>Projects</span></h2>
+
+                        <p class="section-label">
+                            MY WORK
+                        </p>
+
+                        <h2>
+                            Projects I've
+                            <span>built.</span>
+                        </h2>
+
                     </div>
 
                 </div>
@@ -619,60 +912,73 @@
                 <div class="projects-grid">
 
 
-                    <!-- PROJECT 1 -->
+                    <!-- =================================
+                         PROJECT 1 - PORTFOLIO
+                    ================================== -->
 
                     <article class="project-card reveal">
 
                         <div class="project-image">
 
+                            <div class="project-placeholder">
+
+                                <i class="fa-solid fa-user"></i>
+
+                            </div>
+
                             <div class="project-overlay">
 
-                                <span>01</span>
-
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                            </div>
-
-                            <div class="project-placeholder">
-                                <i class="fa-solid fa-user"></i>
-                            </div>
-
-                        </div>
-
-                        <div class="project-content">
-
-                            <div class="project-top">
-
-                                <span class="project-type">
-                                    Portfolio
+                                <span>
+                                    01
                                 </span>
 
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
                             </div>
 
-                            <h3>Personal Portfolio Website</h3>
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <div class="project-top">
+
+                                <span class="project-type">
+                                    Web Development
+                                </span>
+
+                                <span>
+                                    2026
+                                </span>
+
+                            </div>
+
+
+                            <h3>
+                                Personal Portfolio
+                            </h3>
+
 
                             <p>
-                                A modern responsive portfolio website designed to showcase my skills, services, projects and professional profile.
+                                A modern responsive developer portfolio showcasing my skills, projects, education and development journey.
                             </p>
 
+
                             <div class="tech-tags">
+
                                 <span>HTML</span>
                                 <span>CSS</span>
                                 <span>JavaScript</span>
+
                             </div>
+
 
                             <div class="project-links">
 
-                                <a href="https://mansimaurya.netlify.app/" target="_blank" rel="noopener noreferrer">
-                                    Live Demo
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
+                                <a href="https://github.com/mansimaurya721-ux/Portfolio" target="_blank">
 
-                                <a href="https://github.com/mansimaurya721-ux/Portfolio" target="_blank" rel="noopener noreferrer">
-                                    GitHub
-                                    <i class="fa-brands fa-github"></i>
+                                    <i class="fa-brands fa-github"></i> GitHub
+
                                 </a>
 
                             </div>
@@ -682,55 +988,80 @@
                     </article>
 
 
-                    <!-- PROJECT 2 -->
+
+                    <!-- =================================
+                         PROJECT 2 - CAR RACING
+                    ================================== -->
 
                     <article class="project-card reveal">
 
                         <div class="project-image">
 
-                            <div class="project-overlay">
-                                <span>02</span>
-                                <i class="fa-solid fa-brain"></i>
+                            <div class="project-placeholder">
+
+                                <i class="fa-solid fa-car-side"></i>
+
                             </div>
 
-                            <div class="project-placeholder">
-                                <i class="fa-solid fa-book-open"></i>
+                            <div class="project-overlay">
+
+                                <span>
+                                    02
+                                </span>
+
+                                <i class="fa-solid fa-gamepad"></i>
+
                             </div>
 
                         </div>
+
 
                         <div class="project-content">
 
                             <div class="project-top">
 
                                 <span class="project-type">
-                                    Full Stack
+                                    Game Development
                                 </span>
 
-                                <i class="fa-solid fa-code"></i>
+                                <span>
+                                    2026
+                                </span>
 
                             </div>
 
-                            <h3>AI Journal System</h3>
+
+                            <h3>
+                                Car Racing Game
+                            </h3>
+
 
                             <p>
-                                A full-stack AI-powered journal application designed to help users create and manage journal entries through a modern interface.
+                                An interactive browser-based car racing game developed with keyboard and mouse controls using HTML, CSS and JavaScript.
                             </p>
+
 
                             <div class="tech-tags">
 
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>Express</span>
-                                <span>MongoDB</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
 
                             </div>
 
+
                             <div class="project-links">
 
-                                <a href="https://github.com/mansimaurya721-ux/ai-journal-system" target="_blank" rel="noopener noreferrer">
-                                    GitHub
-                                    <i class="fa-brands fa-github"></i>
+                                <a href="#" target="_blank">
+
+                                    <i class="fa-solid fa-play"></i> Live Demo
+
+                                </a>
+
+                                <a href="#" target="_blank">
+
+                                    <i class="fa-brands fa-github"></i> GitHub
+
                                 </a>
 
                             </div>
@@ -740,55 +1071,79 @@
                     </article>
 
 
-                    <!-- PROJECT 3 -->
+
+                    <!-- =================================
+                         PROJECT 3 - SHIYORA LMS
+                    ================================== -->
 
                     <article class="project-card reveal">
 
                         <div class="project-image">
 
-                            <div class="project-overlay">
-                                <span>03</span>
-                                <i class="fa-solid fa-users"></i>
+                            <div class="project-placeholder">
+
+                                <i class="fa-solid fa-graduation-cap"></i>
+
                             </div>
 
-                            <div class="project-placeholder">
-                                <i class="fa-solid fa-comments"></i>
+
+                            <div class="project-overlay">
+
+                                <span>
+                                    03
+                                </span>
+
+                                <span class="project-status">
+                                    Currently Working
+                                </span>
+
                             </div>
 
                         </div>
+
 
                         <div class="project-content">
 
                             <div class="project-top">
 
                                 <span class="project-type">
-                                    Full Stack
+                                    Full Stack LMS
                                 </span>
 
-                                <i class="fa-solid fa-code"></i>
+                                <span>
+                                    2026
+                                </span>
 
                             </div>
 
-                            <h3>Social Media Platform</h3>
+
+                            <h3>
+                                Shiyora LMS
+                            </h3>
+
 
                             <p>
-                                A full-stack social media application with authentication, posts, comments, likes and social interaction features.
+                                A multi-tenant SaaS-based Learning Management System currently under development, focused on course management, lessons, quizzes, progress tracking and role-based access.
                             </p>
+
 
                             <div class="tech-tags">
 
-                                <span>React</span>
+                                <span>React.js</span>
                                 <span>Node.js</span>
-                                <span>Express</span>
+                                <span>Express.js</span>
                                 <span>MongoDB</span>
+                                <span>JWT</span>
 
                             </div>
 
+
                             <div class="project-links">
 
-                                <a href="https://github.com/mansimaurya721-ux/social-media-platform" target="_blank" rel="noopener noreferrer">
-                                    GitHub
-                                    <i class="fa-brands fa-github"></i>
+                                <a href="#" target="_blank">
+
+                                    <i class="fa-solid fa-code"></i> Currently Working
+
                                 </a>
 
                             </div>
@@ -798,55 +1153,73 @@
                     </article>
 
 
-                    <!-- PROJECT 4 -->
+
+                    <!-- =================================
+                         PROJECT 4 - CALCULATOR
+                    ================================== -->
 
                     <article class="project-card reveal">
 
                         <div class="project-image">
 
-                            <div class="project-overlay">
-                                <span>04</span>
-                                <i class="fa-solid fa-boxes-stacked"></i>
+                            <div class="project-placeholder">
+
+                                <i class="fa-solid fa-calculator"></i>
+
                             </div>
 
-                            <div class="project-placeholder">
-                                <i class="fa-solid fa-chart-column"></i>
+                            <div class="project-overlay">
+
+                                <span>
+                                    04
+                                </span>
+
+                                <i class="fa-solid fa-calculator"></i>
+
                             </div>
 
                         </div>
+
 
                         <div class="project-content">
 
                             <div class="project-top">
 
                                 <span class="project-type">
-                                    Java
+                                    Java Application
                                 </span>
 
-                                <i class="fa-brands fa-java"></i>
+                                <span>
+                                    2026
+                                </span>
 
                             </div>
 
-                            <h3>Stock Management System</h3>
+
+                            <h3>
+                                Java Calculator
+                            </h3>
+
 
                             <p>
-                                A Java Swing CRUD application for managing products, stock information and database records.
+                                A simple calculator application developed using Java with a focus on programming fundamentals and user interaction.
                             </p>
+
 
                             <div class="tech-tags">
 
                                 <span>Java</span>
-                                <span>Swing</span>
-                                <span>MySQL</span>
-                                <span>JDBC</span>
+                                <span>OOP</span>
 
                             </div>
 
+
                             <div class="project-links">
 
-                                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-                                    GitHub
-                                    <i class="fa-brands fa-github"></i>
+                                <a href="#" target="_blank">
+
+                                    <i class="fa-brands fa-github"></i> GitHub
+
                                 </a>
 
                             </div>
@@ -862,19 +1235,32 @@
         </section>
 
 
-        <!-- ================= PROCESS ================= -->
 
-        <section id="process" class="section">
+        <!-- =========================================
+             PROCESS
+        ========================================== -->
+
+        <section class="section dark-section" id="process">
 
             <div class="container">
 
                 <div class="section-heading reveal">
 
-                    <span class="section-number">05</span>
+                    <span class="section-number">
+                        05
+                    </span>
 
                     <div>
-                        <p class="section-label">HOW I WORK</p>
-                        <h2>My <span>Process</span></h2>
+
+                        <p class="section-label">
+                            MY PROCESS
+                        </p>
+
+                        <h2>
+                            How I build
+                            <span>projects.</span>
+                        </h2>
+
                     </div>
 
                 </div>
@@ -882,18 +1268,25 @@
 
                 <div class="process-grid">
 
+
                     <div class="process-item reveal">
 
                         <div class="process-icon">
+
                             <i class="fa-solid fa-lightbulb"></i>
+
                         </div>
 
-                        <span>01</span>
+                        <span>
+                            STEP 01
+                        </span>
 
-                        <h3>Understand</h3>
+                        <h3>
+                            Idea
+                        </h3>
 
                         <p>
-                            Understand the idea, requirements and goals.
+                            Understanding the problem and defining the project requirements.
                         </p>
 
                     </div>
@@ -902,15 +1295,21 @@
                     <div class="process-item reveal">
 
                         <div class="process-icon">
+
                             <i class="fa-solid fa-pen-ruler"></i>
+
                         </div>
 
-                        <span>02</span>
+                        <span>
+                            STEP 02
+                        </span>
 
-                        <h3>Design</h3>
+                        <h3>
+                            Plan
+                        </h3>
 
                         <p>
-                            Plan a clean layout and intuitive user experience.
+                            Designing the structure, user flow and technology stack.
                         </p>
 
                     </div>
@@ -919,15 +1318,21 @@
                     <div class="process-item reveal">
 
                         <div class="process-icon">
+
                             <i class="fa-solid fa-code"></i>
+
                         </div>
 
-                        <span>03</span>
+                        <span>
+                            STEP 03
+                        </span>
 
-                        <h3>Build</h3>
+                        <h3>
+                            Build
+                        </h3>
 
                         <p>
-                            Develop responsive and maintainable code.
+                            Developing the frontend, backend and database components.
                         </p>
 
                     </div>
@@ -936,15 +1341,21 @@
                     <div class="process-item reveal">
 
                         <div class="process-icon">
+
                             <i class="fa-solid fa-rocket"></i>
+
                         </div>
 
-                        <span>04</span>
+                        <span>
+                            STEP 04
+                        </span>
 
-                        <h3>Deliver</h3>
+                        <h3>
+                            Launch
+                        </h3>
 
                         <p>
-                            Test, refine and deliver the finished website.
+                            Testing, improving and deploying the final application.
                         </p>
 
                     </div>
@@ -956,69 +1367,105 @@
         </section>
 
 
-        <!-- ================= CONTACT ================= -->
 
-        <section id="contact" class="section contact-section dark-section">
+        <!-- =========================================
+             CONTACT
+        ========================================== -->
+
+        <section class="section" id="contact">
 
             <div class="container">
 
                 <div class="contact-wrapper">
 
+
                     <div class="contact-info reveal">
 
-                        <span class="section-label">
-                            LET'S CONNECT
-                        </span>
+                        <p class="section-label">
+                            GET IN TOUCH
+                        </p>
+
 
                         <h2>
-                            Have a project<br>
-                            <span>in mind?</span>
+                            Let's build
+                            <span>something.</span>
                         </h2>
 
+
                         <p>
-                            I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
+
+                            Have a project idea, opportunity or simply want to connect? Feel free to send me a message.
+
                         </p>
 
 
                         <div class="contact-details">
 
-                            <a href="mailto:mansimaurya721@gmail.com">
+
+                            <a href="mailto:your-email@example.com">
 
                                 <div class="contact-icon">
-                                    <i class="fa-regular fa-envelope"></i>
+
+                                    <i class="fa-solid fa-envelope"></i>
+
                                 </div>
 
                                 <div>
-                                    <small>Email</small>
-                                    <span>mansimaurya721@gmail.com</span>
+
+                                    <small>
+                                        EMAIL
+                                    </small>
+
+                                    <span>
+                                        your-email@example.com
+                                    </span>
+
                                 </div>
 
                             </a>
 
 
-                            <a href="https://github.com/mansimaurya721-ux" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/mansimaurya721-ux" target="_blank">
 
                                 <div class="contact-icon">
+
                                     <i class="fa-brands fa-github"></i>
+
                                 </div>
 
                                 <div>
-                                    <small>GitHub</small>
-                                    <span>@mansimaurya721-ux</span>
+
+                                    <small>
+                                        GITHUB
+                                    </small>
+
+                                    <span>
+                                        mansimaurya721-ux
+                                    </span>
+
                                 </div>
 
                             </a>
 
 
-                            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/" target="_blank">
 
                                 <div class="contact-icon">
+
                                     <i class="fa-brands fa-linkedin-in"></i>
+
                                 </div>
 
                                 <div>
-                                    <small>LinkedIn</small>
-                                    <span>Connect with me</span>
+
+                                    <small>
+                                        LINKEDIN
+                                    </small>
+
+                                    <span>
+                                        Connect with me
+                                    </span>
+
                                 </div>
 
                             </a>
@@ -1026,6 +1473,7 @@
                         </div>
 
                     </div>
+
 
 
                     <!-- CONTACT FORM -->
@@ -1034,14 +1482,17 @@
 
                         <div class="form-header">
 
-                            <span>Send a message</span>
+                            <span>
+                                Send a Message
+                            </span>
 
-                            <i class="fa-regular fa-paper-plane"></i>
+                            <i class="fa-solid fa-paper-plane"></i>
 
                         </div>
 
 
                         <form id="contact-form">
+
 
                             <div class="input-group">
 
@@ -1071,7 +1522,7 @@
                                     Message
                                 </label>
 
-                                <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+                                <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
 
                             </div>
 
@@ -1085,7 +1536,8 @@
                             </button>
 
 
-                            <p id="status" class="form-status"></p>
+                            <div id="status" class="form-status">
+                            </div>
 
                         </form>
 
@@ -1100,29 +1552,43 @@
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
     <footer>
 
         <div class="container footer-container">
 
+
             <div class="footer-logo">
+
                 Mansi<span>.</span>
+
             </div>
 
+
             <p>
-                Designed & built by Mansi Maurya ©
-                <span id="year"></span>
+
+                © <span id="year"></span> Mansi Maurya. All rights reserved.
+
             </p>
+
 
             <div class="footer-socials">
 
-                <a href="https://github.com/mansimaurya721-ux" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/mansimaurya721-ux" target="_blank" aria-label="GitHub">
+
                     <i class="fa-brands fa-github"></i>
+
                 </a>
 
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+
+                <a href="https://www.linkedin.com/in/mansi-maurya1710-/" target="_blank" aria-label="LinkedIn">
+
                     <i class="fa-brands fa-linkedin-in"></i>
+
                 </a>
 
             </div>
@@ -1132,7 +1598,10 @@
     </footer>
 
 
-    <!-- ================= SCROLL TOP ================= -->
+
+    <!-- =========================================
+         SCROLL TO TOP
+    ========================================== -->
 
     <button id="topBtn" aria-label="Scroll to top">
 
@@ -1141,7 +1610,10 @@
     </button>
 
 
-    <!-- JavaScript -->
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
     <script src="script.js"></script>
 
